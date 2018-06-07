@@ -1,15 +1,31 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Button } from 'react-native';
 import { Text, ButtonGroup } from 'react-native-elements';
 import { connect } from 'react-redux';
-import { selectCapo } from '../actions';
-import { BUTTON_GROUP_STYLES } from '../constants';
+import { createStackNavigator } from 'react-navigation';
 
-const buttonRoutes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
+import { selectCapo } from '../actions';
+
+import { BUTTON_GROUP_STYLES, STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
+
+const buttonRoutes = ['News', 'Calendar', 'Places', 'Groups', 'Settings'];
 
 class BottomNavBar extends Component {
+    constructor () {
+        super()
+        this.state = {
+          selectedIndex: 2
+        }
+        this.updateIndex = this.updateIndex.bind(this)
+      }
+      
+      updateIndex (selectedIndex) {
+        this.setState({selectedIndex})
+      }
+
   render() {
     const { selectedCapo } = this.props.selectedValues;
+    const { selectedIndex } = this.state;
     const {
       containerStyle,
       buttonStyle,
@@ -18,12 +34,11 @@ class BottomNavBar extends Component {
 
     return (
       <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-        <Text h3>Capo</Text>
-        <Text h1 style={{ marginBottom: 2 }}>{selectedCapo}</Text>
+        <Text h1 style={{ marginBottom: 2 }}>{selectedIndex}</Text>
         <ButtonGroup
-          onPress={index => this.props.selectCapo(index + 1)}
-          selectedIndex={selectedCapo - 1}
-          buttons={buttonRoutes}
+            onPress={this.updateIndex}
+            selectedIndex={selectedIndex}
+          buttons={['News', 'Calendar', 'Places', 'Groups', 'Settings']}
           constainerStyle={containerStyle}
           buttonStyle={buttonStyle}
           selectedTextStyle={selectedTextStyle}
@@ -32,6 +47,30 @@ class BottomNavBar extends Component {
     );
   }
 }
+
+const styles = {
+    imageStyle: {
+      marginTop: 20,
+      marginLeft: 10,
+      width: 40,
+      height: 40
+    },
+    containerStyle: {
+      flex: 1,
+      justifyContent: 'space-around',
+      alignItems: 'center'
+    },
+    dividerStyle: {
+      width: SCREEN_WIDTH * 0.9,
+      backgroundColor: '#2196F3'
+    },
+    buttonContainerStyle: {
+      width: SCREEN_WIDTH,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingBottom: 10
+    }
+  };
 
 const mapStateToProps = ({ selectedValues }) => ({ selectedValues });
 
