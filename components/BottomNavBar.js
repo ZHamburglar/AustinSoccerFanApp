@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { selectCapo } from '../actions';
 import { BUTTON_GROUP_STYLES } from '../constants';
 
-const CAPO_POSITIONS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
+const buttonRoutes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
 
 class BottomNavBar extends Component {
   render() {
@@ -23,7 +23,7 @@ class BottomNavBar extends Component {
         <ButtonGroup
           onPress={index => this.props.selectCapo(index + 1)}
           selectedIndex={selectedCapo - 1}
-          buttons={CAPO_POSITIONS}
+          buttons={buttonRoutes}
           constainerStyle={containerStyle}
           buttonStyle={buttonStyle}
           selectedTextStyle={selectedTextStyle}

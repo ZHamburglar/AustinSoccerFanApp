@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Platform, Image, Text, Button } from 'react-native';
 import { Divider } from 'react-native-elements';
+import { createStackNavigator } from 'react-navigation';
 import Expo from 'expo';
 import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
@@ -17,7 +18,7 @@ const cacheImages = images => images.map(image => {
   return Expo.Asset.fromModule(image).downloadAsync();
 });
 
-class MainScreen extends Component {
+class Settings extends Component {
   static navigationOptions = () => ({
     title: 'Capo Keys',
     headerStyle: {
@@ -59,12 +60,14 @@ class MainScreen extends Component {
 
         <View style={containerStyle}>
           <KeysButtons />
+          <Text>BOOOOOOOO</Text>
+          <Button 
+            title="Go to Details"
+            onPress={() => this.props.navigation.navigate('Main')} />
+
           <Divider style={dividerStyle} />
           <CapoButtons />
           <Divider style={dividerStyle} />
-          <Button 
-            title="Go to Details"
-            onPress={() => this.props.navigation.navigate('Settings')} />
           <CapoKey />
         </View>
 
@@ -100,4 +103,4 @@ const styles = {
   }
 };
 
-export default MainScreen;
+export default Settings;
