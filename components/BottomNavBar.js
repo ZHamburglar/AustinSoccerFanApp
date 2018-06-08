@@ -8,22 +8,37 @@ import { selectCapo } from '../actions';
 
 import { BUTTON_GROUP_STYLES, STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
 
-const buttonRoutes = ['News', 'Calendar', 'Places', 'Groups', 'Settings'];
 
 class BottomNavBar extends Component {
     constructor () {
         super()
         this.state = {
-          selectedIndex: 2
+          selectedIndex: 0
         }
         this.updateIndex = this.updateIndex.bind(this)
       }
       
       updateIndex (selectedIndex) {
         this.setState({selectedIndex})
+        console.log(selectedIndex)
+        console.log(this.props.navigation)
+
+        if (selectedIndex === 4) {
+            console.log('yayyyyyyyy')
+            this.props.navigation.navigate("Settings");
+        }
+
       }
 
+    navigatePages = () => {
+        console.log(this.props.navigation)
+        this.props.navigation.navigate('Main');
+    }
+ 
+
   render() {
+    const buttonRoutes = ['News', 'Calendar', 'Places', 'Groups', 'Settings'];
+
     const { selectedCapo } = this.props.selectedValues;
     const { selectedIndex } = this.state;
     const {
@@ -38,7 +53,7 @@ class BottomNavBar extends Component {
         <ButtonGroup
             onPress={this.updateIndex}
             selectedIndex={selectedIndex}
-          buttons={['News', 'Calendar', 'Places', 'Groups', 'Settings']}
+          buttons={buttonRoutes}
           constainerStyle={containerStyle}
           buttonStyle={buttonStyle}
           selectedTextStyle={selectedTextStyle}

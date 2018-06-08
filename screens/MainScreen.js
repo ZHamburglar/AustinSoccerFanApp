@@ -19,7 +19,7 @@ const cacheImages = images => images.map(image => {
 
 class MainScreen extends Component {
   static navigationOptions = () => ({
-    title: 'Capo Keys',
+    title: 'News',
     headerStyle: {
       height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
       backgroundColor: '#2196F3'
