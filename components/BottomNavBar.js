@@ -49,7 +49,6 @@ class BottomNavBar extends Component {
 
     return (
       <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-        <Text h1 style={{ marginBottom: 2 }}>{selectedIndex}</Text>
         <ButtonGroup
             onPress={this.updateIndex}
             selectedIndex={selectedIndex}

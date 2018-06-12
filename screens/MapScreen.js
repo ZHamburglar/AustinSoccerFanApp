@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Platform, Image, Text, Button } from 'react-native';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { Divider } from 'react-native-elements';
-import { createStackNavigator } from 'react-navigation';
 import Expo from 'expo';
 import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
@@ -18,9 +18,9 @@ const cacheImages = images => images.map(image => {
   return Expo.Asset.fromModule(image).downloadAsync();
 });
 
-class Settings extends Component {
+class MapScreen extends Component {
   static navigationOptions = () => ({
-    title: 'Settings',
+    title: 'News',
     headerStyle: {
       height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
       backgroundColor: '#2196F3'
@@ -52,27 +52,27 @@ class Settings extends Component {
   }
 
   render() {
-    const { containerStyle, dividerStyle, buttonContainerStyle } = styles;
+    const { containerStyle, dividerStyle, buttonContainerStyle, container, mapView } = styles;
 
     return (
       <View style={{ flex: 1, backgroundColor: '#ddd' }}>
-        <ChordsModal />
-
-        <View style={containerStyle}>
-          <KeysButtons />
-          <Text>BOOOOOOOO</Text>
-          <Button 
-            title="Go to Details"
-            onPress={() => this.props.navigation.navigate('Main')} />
-            <Button 
-            title="Go to Map Screen"
-            onPress={() => this.props.navigation.navigate('MapScreen')} />
-
-          <Divider style={dividerStyle} />
-          <CapoButtons />
-          <Divider style={dividerStyle} />
-          <CapoKey />
+        <View style={container}>
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          style={mapView}
+          initialRegion={{
+              latitude: 30.26722,
+              longitude: -97.7619,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+        />
         </View>
+        <Button 
+            title="Go to Back"
+            onPress={() => this.props.navigation.navigate('Settings')} />
+
+        
 
         {/* <ViewChordsButton style={buttonContainerStyle} /> */}
         <BottomNavBar />
@@ -83,6 +83,17 @@ class Settings extends Component {
 }
 
 const styles = {
+  container: {
+    top: 100,
+    bottom: 100,
+    alignItems: 'center'
+  },
+  mapView: {
+    width: 300,
+    height: 300,
+    borderRadius: 1,
+    margin: 3,
+  },
   imageStyle: {
     marginTop: 20,
     marginLeft: 10,
@@ -106,4 +117,4 @@ const styles = {
   }
 };
 
-export default Settings;
+export default MapScreen;
