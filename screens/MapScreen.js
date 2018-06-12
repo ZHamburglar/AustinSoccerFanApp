@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Platform, Image, Text, Button } from 'react-native';
+import { View, Platform, Image, Text, Button, Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { Divider } from 'react-native-elements';
 import Expo from 'expo';
@@ -13,6 +13,9 @@ import ViewChordsButton from '../components/ViewChordsButton';
 import icon from '../assets/icons/pure-icon.png';
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
 
+const window = Dimensions.get('window');
+
+
 const cacheImages = images => images.map(image => {
   if (typeof image === 'string') return Image.prefetch(image);
   return Expo.Asset.fromModule(image).downloadAsync();
@@ -20,7 +23,7 @@ const cacheImages = images => images.map(image => {
 
 class MapScreen extends Component {
   static navigationOptions = () => ({
-    title: 'News',
+    title: 'Austin Places',
     headerStyle: {
       height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
       backgroundColor: '#2196F3'
@@ -72,33 +75,49 @@ class MapScreen extends Component {
           title={"Mr. Tramps"}
           description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
           opacity={ .8}
+          image={require('../assets/icons/beer-jar.png')}
+
           />
           <Marker 
           coordinate={{ latitude: 30.2848235, longitude: -97.7197796 }} 
           title={"Haymaker"}
           description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
           opacity={ .8}
+          image={require('../assets/icons/beer-jar.png')}
+
           />
           <Marker 
           coordinate={{ latitude: 30.2982286, longitude: -97.7052838 }} 
           title={"B.D. Riley's @ Mueller"}
           description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
           opacity={ .8}
+          image={require('../assets/icons/beer-jar.png')}
+
           />
           <Marker 
           coordinate={{ latitude: 30.267722, longitude: -97.743317 }} 
           title={"B.D. Riley's Downtown"}
           description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
           opacity={ .8}
+          image={require('../assets/icons/beer-jar.png')}
           />
+          <Marker 
+          coordinate={{ latitude: 30.388073, longitude: -97.719939 }} 
+          title={"Austin Stadium"}
+          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
+          opacity={ .8}
+          image={require('../assets/icons/stadium.png')}
+          />
+
           
         </MapView>
 
         </View>
         <View>
-        <Button 
+        {/* <Text>Window is {window.height}H and {window.width}W</Text> */}
+        {/* <Button 
             title="Go to Back"
-            onPress={() => this.props.navigation.navigate('Settings')} />
+            onPress={() => this.props.navigation.navigate('Settings')} /> */}
           <BottomNavBar />
         </View>
 
@@ -116,8 +135,8 @@ const styles = {
     alignItems: 'center'
   },
   mapView: {
-    width: 300,
-    height: 300,
+    width: window.width-10,
+    height: window.height-200,
     borderRadius: 1,
     margin: 3,
   },
