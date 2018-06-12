@@ -68,9 +68,7 @@ class MainScreen extends Component {
           <CapoKey />
         </View>
 
-        {/* <ViewChordsButton style={buttonContainerStyle} /> */}
         <BottomNavBar />
-        {/* BottomBannerAd */}
       </View>
     );
   }

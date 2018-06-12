@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Platform, Image, Text, Button } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { Divider } from 'react-native-elements';
 import Expo from 'expo';
 import KeysButtons from '../components/KeysButtons';
@@ -57,26 +57,54 @@ class MapScreen extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#ddd' }}>
         <View style={container}>
-        <MapView
-          provider={PROVIDER_GOOGLE}
-          style={mapView}
-          initialRegion={{
-              latitude: 30.26722,
-              longitude: -97.7619,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
-            }}
-        />
+          <MapView
+            provider={PROVIDER_GOOGLE}
+            style={mapView}
+            initialRegion={{
+                latitude: 30.26722,
+                longitude: -97.7619,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+              }}
+          >
+          <Marker 
+          coordinate={{ latitude: 30.361358, longitude: -97.7161855 }} 
+          title={"Mr. Tramps"}
+          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
+          opacity={ .8}
+          />
+          <Marker 
+          coordinate={{ latitude: 30.2848235, longitude: -97.7197796 }} 
+          title={"Haymaker"}
+          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
+          opacity={ .8}
+          />
+          <Marker 
+          coordinate={{ latitude: 30.2982286, longitude: -97.7052838 }} 
+          title={"B.D. Riley's @ Mueller"}
+          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
+          opacity={ .8}
+          />
+          <Marker 
+          coordinate={{ latitude: 30.267722, longitude: -97.743317 }} 
+          title={"B.D. Riley's Downtown"}
+          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
+          opacity={ .8}
+          />
+          
+        </MapView>
+
         </View>
+        <View>
         <Button 
             title="Go to Back"
             onPress={() => this.props.navigation.navigate('Settings')} />
+          <BottomNavBar />
+        </View>
+
 
         
 
-        {/* <ViewChordsButton style={buttonContainerStyle} /> */}
-        <BottomNavBar />
-        {/* BottomBannerAd */}
       </View>
     );
   }
@@ -84,8 +112,7 @@ class MapScreen extends Component {
 
 const styles = {
   container: {
-    top: 100,
-    bottom: 100,
+
     alignItems: 'center'
   },
   mapView: {
