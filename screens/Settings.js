@@ -19,23 +19,7 @@ const cacheImages = images => images.map(image => {
 });
 
 class Settings extends Component {
-  static navigationOptions = () => ({
-    title: 'Settings',
-    headerStyle: {
-      height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
-      backgroundColor: '#2196F3'
-    },
-    headerTitleStyle: {
-      marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
-      color: 'white'
-    },
-    headerLeft: (
-      <Image
-        source={icon}
-        style={styles.imageStyle}
-      />
-    )
-  });
+
 
   state = {
     appIsReady: false,
@@ -129,47 +113,109 @@ class Settings extends Component {
               })}
             />
             <CheckBox
-              title='Click Here'
+              title='LAFC'
               checked={this.state.checked}
               onPress={() => this.setState({
                 checked: !this.state.checked
               })}
             />
             <CheckBox
-              title='Click Here'
+              title='Minnesota United'
               checked={this.state.checked}
               onPress={() => this.setState({
                 checked: !this.state.checked
               })}
             />
             <CheckBox
-              title='Click Here'
+              title='Montreal Impact'
               checked={this.state.checked}
               onPress={() => this.setState({
                 checked: !this.state.checked
               })}
             />
             <CheckBox
-              title='Click Here'
+              title='New England Revolution'
               checked={this.state.checked}
               onPress={() => this.setState({
                 checked: !this.state.checked
               })}
             />
             <CheckBox
-              title='Click Here'
+              title='NYCFC'
               checked={this.state.checked}
               onPress={() => this.setState({
                 checked: !this.state.checked
               })}
             />
             <CheckBox
-              title='Click Here'
+              title='New York Red Bulls'
               checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
             />
             <CheckBox
-              title='Click Here'
+              title='Orlando City FC'
               checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Philadelphia Union'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Portland Timbers'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Real Salt Lake'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='San Jose Earthquakes'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Seattle Sounders FC'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Sporting KC'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Toronto FC'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Vancouver Whitecaps FC'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
             />
             <Divider style={{ backgroundColor: 'blue' }} />
             <Text>Premier League</Text>

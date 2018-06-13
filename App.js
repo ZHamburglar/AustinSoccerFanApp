@@ -12,6 +12,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import store from './store';
 import MainScreen from './screens/MainScreen';
+import SupportersGroups from './screens/SupportersGroups'
 import MapScreen from './screens/MapScreen';
 import Calendar from './screens/Calendar';
 
@@ -55,6 +56,22 @@ export default class App extends Component {
             tabBarIcon: (
               <MaterialIcons
                 name="assignment"
+                color="white"
+                size={24}
+              />
+            )
+          }
+        },
+      },
+
+      SupportersGroups: {
+        screen: SupportersGroups,
+        navigationOptions: () => {
+          return {
+            title: "SG's",
+            tabBarIcon: (
+              <MaterialIcons
+                name="home"
                 color="white"
                 size={24}
               />

@@ -6,8 +6,6 @@ import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
 import CapoKey from '../components/CapoKey';
 import BottomNavBar from '../components/BottomNavBar';
-import List from '../components/List';
-
 
 import ChordsModal from '../modals/ChordsModal';
 import ViewChordsButton from '../components/ViewChordsButton';
@@ -19,24 +17,24 @@ const cacheImages = images => images.map(image => {
   return Expo.Asset.fromModule(image).downloadAsync();
 });
 
-class MainScreen extends Component {
-  static navigationOptions = () => ({
-    title: 'News',
-    headerStyle: {
-      height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
-      backgroundColor: '#2196F3'
-    },
-    headerTitleStyle: {
-      marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
-      color: 'white'
-    },
-    headerLeft: (
-      <Image
-        source={icon}
-        style={styles.imageStyle}
-      />
-    )
-  });
+class SupportersGroups extends Component {
+//   static navigationOptions = () => ({
+//     title: 'Groups',
+//     headerStyle: {
+//       height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
+//       backgroundColor: '#2196F3'
+//     },
+//     headerTitleStyle: {
+//       marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
+//       color: 'white'
+//     },
+//     headerLeft: (
+//       <Image
+//         source={icon}
+//         style={styles.imageStyle}
+//       />
+//     )
+//   });
 
   state = {
     appIsReady: false
@@ -57,8 +55,18 @@ class MainScreen extends Component {
 
     return (
       <View style={{ flex: 1, backgroundColor: '#ddd' }}>
+        <ChordsModal />
 
-        <List />
+        <View style={containerStyle}>
+          <KeysButtons />
+          <Divider style={dividerStyle} />
+          <Divider style={dividerStyle} />
+          <Button 
+            title="Go to Details"
+            onPress={() => this.props.navigation.navigate('Settings')} />
+          <CapoKey />
+        </View>
+
       </View>
     );
   }
@@ -88,4 +96,4 @@ const styles = {
   }
 };
 
-export default MainScreen;
+export default SupportersGroups;
