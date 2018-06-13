@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Platform, Image, Text, Button } from 'react-native';
+import { View, Platform, Image, Text, Button, ScrollView } from 'react-native';
 import { Divider, CheckBox } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
 import Expo from 'expo';
@@ -58,29 +58,206 @@ class Settings extends Component {
 
     return (
       <View style={{ flex: 1, backgroundColor: '#ddd' }}>
-        <CheckBox
-          title='Click Here'
-          checked={this.state.checked}
-        />
-        <CheckBox
-          title='Click Here'
-          checked={this.state.checked}
-        />
-        <CheckBox
-          title='Click Here'
-          checked={this.state.checked}
-          onPress={() => this.setState({
-            checked: !this.state.checked
-          })}
-        />
-        <CheckBox
-          title='Click Here'
-          checked={this.state.checked}
-        />
-        <CheckBox
-          title='Click Here'
-          checked={this.state.checked}
-        />
+          <ScrollView>
+          
+            <Divider style={{ backgroundColor: 'blue' }} />
+            <Text>Local Teams</Text>
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+            />
+            <Divider style={{ backgroundColor: 'blue' }} />
+            <Text>MLS</Text>
+            <CheckBox
+              title='Atlanta United'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Chicago Fire'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Colorado Rapids'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Columbus Crew SC'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='DC United'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='FC Dallas'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Houston Dynamo'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='LA Galaxy'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+            />
+            <Divider style={{ backgroundColor: 'blue' }} />
+            <Text>Premier League</Text>
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+            <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+                        <CheckBox
+              title='Click Here'
+              checked={this.state.checked}
+              onPress={() => this.setState({
+                checked: !this.state.checked
+              })}
+            />
+          </ScrollView>
       </View>
     );
   }
