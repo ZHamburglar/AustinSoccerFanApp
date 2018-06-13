@@ -3,6 +3,11 @@ import { View, Platform, Image, Text, Button, Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { Divider } from 'react-native-elements';
 import Expo from 'expo';
+
+import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
+
 import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
 import CapoKey from '../components/CapoKey';
@@ -22,23 +27,25 @@ const cacheImages = images => images.map(image => {
 });
 
 class MapScreen extends Component {
-  static navigationOptions = () => ({
-    title: 'Austin Places',
-    headerStyle: {
-      height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
-      backgroundColor: '#2196F3'
-    },
-    headerTitleStyle: {
-      marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
-      color: 'white'
-    },
-    headerLeft: (
-      <Image
-        source={icon}
-        style={styles.imageStyle}
-      />
-    )
-  });
+  // static navigationOptions = () => ({
+  //   title: 'Austin Places',
+  //   headerStyle: {
+  //     height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
+  //     backgroundColor: '#2196F3'
+  //   },
+  //   headerTitleStyle: {
+  //     marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
+  //     color: 'white'
+  //   },
+  //   headerLeft: (
+  //     <Image
+  //       source={icon}
+  //       style={styles.imageStyle}
+  //     />
+  //   )
+  // });
+
+  
 
   state = {
     appIsReady: false
@@ -58,7 +65,7 @@ class MapScreen extends Component {
     const { containerStyle, dividerStyle, buttonContainerStyle, container, mapView } = styles;
 
     return (
-      <View style={{ flex: 1, backgroundColor: '#ddd' }}>
+      <View>
         <View style={container}>
           <MapView
             provider={PROVIDER_GOOGLE}
@@ -108,17 +115,31 @@ class MapScreen extends Component {
           opacity={ .8}
           image={require('../assets/icons/stadium.png')}
           />
+          <Marker 
+          coordinate={{ latitude: 30.3731628, longitude: -97.72839 }} 
+          title={"Soccer Corner"}
+          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
+          opacity={ .8}
+          image={require('../assets/icons/shop.png')}
+          />
+          
+          <Marker 
+          coordinate={{ latitude: 30.264563, longitude: -97.760819 }} 
+          title={"Soccer Corner"}
+          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
+          opacity={ .8}
+          image={require('../assets/icons/shop.png')}
+          />
 
           
         </MapView>
 
         </View>
         <View>
-        {/* <Text>Window is {window.height}H and {window.width}W</Text> */}
-        {/* <Button 
-            title="Go to Back"
-            onPress={() => this.props.navigation.navigate('Settings')} /> */}
-          <BottomNavBar />
+
+
+          {/* <BottomNavBar /> */}
+          
         </View>
 
 
@@ -136,7 +157,7 @@ const styles = {
   },
   mapView: {
     width: window.width-10,
-    height: window.height-200,
+    height: window.height,
     borderRadius: 1,
     margin: 3,
   },
