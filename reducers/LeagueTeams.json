@@ -97,40 +97,88 @@
     
     
     
-    "EPL": [{
-      "object": {
-      "a": "b",
-      "c": "d",
-      "e": "f"
-    },
-      "object2": {
-      "a": "b",
-      "c": "d",
-      "e": "f"
-    },
-    "object3": {
-      "a": "b",
-      "c": "d",
-      "e": "f"
-    }
-    }],
-    "Austin Teams": [{
-      "object": {
-      "a": "b",
-      "c": "d",
-      "e": "f"
-    },
-      "object2": {
-      "a": "b",
-      "c": "d",
-      "e": "f"
-    },
-    "object3": {
-      "a": "b",
-      "c": "d",
-      "e": "f"
-    }
-    }],
+    "EPL": [
+            {
+            "id": 0,
+            "name": "Atlanta United"
+        },
+        {
+            "id": 1,
+            "name": "Chicago Fire"
+        },
+        {
+            "id": 2,
+            "name": "FC Cincinatti"
+        },
+        {
+            "id": 3,
+            "name": "Colorado Rapids"
+        },
+        {
+            "id": 4,
+            "name": "D.C. United"
+        },
+        {
+            "id": 5,
+            "name": "FC Dallas"
+        },
+        {
+            "id": 6,
+            "name": "Houston Dynamo"
+        },
+        {
+            "id": 7,
+            "name": "LA Galaxy"
+        },
+        {
+            "id": 8,
+            "name": "LAFC"
+        },
+        {
+            "id": 9,
+            "name": "Minnesota United"
+        },
+        {
+            "id": 10,
+            "name": "Montreal Impact"
+        },
+        {
+            "id": 11,
+            "name": "New England Revolution"
+        },
+        {
+            "id": 12,
+            "name": "NYCFC"
+        },
+        {
+            "id": 13,
+            "name": "New York Red Bulls"
+        },
+        {
+            "id": 14,
+            "name": "Orlando City FC"
+        },
+        {
+            "id": 15,
+            "name": "Philadelphia Union"
+        },
+        {
+            "id": 16,
+            "name": "Portland Timbers"
+        },
+        {
+            "id": 17,
+            "name": "Real Salt Lake"
+        },
+        {
+            "id": 18,
+            "name": "San Jose Earthquakes"
+        },
+        {
+            "id": 19,
+            "name": "Seattle Sounders FC"
+        }
+  ],
     "boolean": true,
     "null": null,
     "number": 123,
