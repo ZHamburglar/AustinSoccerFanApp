@@ -14,7 +14,7 @@ import store from './store';
 import MainScreen from './screens/MainScreen';
 import SupportersGroups from './screens/SupportersGroups'
 import MapScreen from './screens/MapScreen';
-import Calendar from './screens/Calendar';
+import CalendarScreen from './screens/CalendarScreen';
 
 
 import Settings from './screens/Settings';
@@ -49,7 +49,7 @@ export default class App extends Component {
       },
 
       Calendar: {
-        screen: Calendar,
+        screen: CalendarScreen,
         navigationOptions: () => {
           return {
             title: "Calendar",
