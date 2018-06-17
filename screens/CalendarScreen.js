@@ -1,126 +1,92 @@
 import React, { Component } from 'react';
-import { View, Platform, Image, Text, Button } from 'react-native';
-import { Divider } from 'react-native-elements';
-import { createStackNavigator } from 'react-navigation';
-import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import {
+  Text,
+  View,
+  StyleSheet
+} from 'react-native';
+import {Agenda} from 'react-native-calendars';
 
-
-import Expo from 'expo';
-
-
-
-import icon from '../assets/icons/pure-icon.png';
-import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
-
-const cacheImages = images => images.map(image => {
-  if (typeof image === 'string') return Image.prefetch(image);
-  return Expo.Asset.fromModule(image).downloadAsync();
-});
-
-class CalendarScreen extends Component {
-  static navigationOptions = () => ({
-    title: 'Settings',
-    headerStyle: {
-      height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
-      backgroundColor: '#2196F3'
-    },
-    headerTitleStyle: {
-      marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
-      color: 'white'
-    },
-    headerLeft: (
-      <Image
-        source={icon}
-        style={styles.imageStyle}
-      />
-    )
-  });
-
-  state = {
-    appIsReady: false
-  }
-
-  componentWillMount() {
-    this._loadAssetsAsync();
-  }
-
-  async _loadAssetsAsync() {
-    const imageAssets = cacheImages([icon]);
-    await Promise.all([...imageAssets]);
-    this.setState({ appIsReady: true });
+export default class CalendarScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: {}
+    };
   }
 
   render() {
-    const { containerStyle, dividerStyle, buttonContainerStyle } = styles;
-
     return (
-      <View style={{ flex: 1, backgroundColor: '#ddd' }}>
-
-        <View style={containerStyle}>
-          <Text>BOOOOOOOO!</Text>
-          <Calendar
-  // Initially visible month. Default = Date()
-  current={'2012-03-01'}
-  // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-  minDate={'2012-05-10'}
-  // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-  maxDate={'2012-05-30'}
-  // Handler which gets executed on day press. Default = undefined
-  onDayPress={(day) => {console.log('selected day', day)}}
-  // Handler which gets executed on day long press. Default = undefined
-  onDayLongPress={(day) => {console.log('selected day', day)}}
-  // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-  monthFormat={'yyyy MM'}
-  // Handler which gets executed when visible month changes in calendar. Default = undefined
-  onMonthChange={(month) => {console.log('month changed', month)}}
-  // Hide month navigation arrows. Default = false
-  hideArrows={true}
-  // Replace default arrows with custom ones (direction can be 'left' or 'right')
-  renderArrow={(direction) => (<Arrow />)}
-  // Do not show days of other months in month page. Default = false
-  hideExtraDays={true}
-  // If hideArrows=false and hideExtraDays=false do not switch month when tapping on greyed out
-  // day from another month that is visible in calendar page. Default = false
-  disableMonthChange={true}
-  // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
-  firstDay={1}
-  // Hide day names. Default = false
-  hideDayNames={false}
-  // Show week numbers to the left. Default = false
-  showWeekNumbers={false}
-  // Handler which gets executed when press arrow icon left. It receive a callback can go back month
-  onPressArrowLeft={substractMonth => substractMonth()}
-  // Handler which gets executed when press arrow icon left. It receive a callback can go next month
-  onPressArrowRight={addMonth => addMonth()}
-/>
-        </View>
-      </View>
+      <Agenda
+        items={this.state.items}
+        loadItemsForMonth={this.loadItems.bind(this)}
+        selected={'2018-06-15'}
+        renderItem={this.renderItem.bind(this)}
+        renderEmptyDate={this.renderEmptyDate.bind(this)}
+        rowHasChanged={this.rowHasChanged.bind(this)}
+      />
     );
+  }
+
+  loadItems(day) {
+    setTimeout(() => {
+      for (let i = -15; i < 85; i++) {
+        const time = day.timestamp + i * 24 * 60 * 60 * 1000;
+        const strTime = this.timeToString(time);
+        if (!this.state.items[strTime]) {
+          this.state.items[strTime] = [];
+          const numItems = Math.floor(Math.random() * 5);
+          for (let j = 0; j < numItems; j++) {
+            this.state.items[strTime].push({
+              name: 'This is the event! ' + strTime,
+              height: Math.max(50, Math.floor(Math.random() * 150))
+            });
+          }
+        }
+      }
+      //console.log(this.state.items);
+      const newItems = {};
+      Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
+      this.setState({
+        items: newItems
+      });
+    }, 1000);
+    // console.log(`Load Items for ${day.year}-${day.month}`);
+  }
+
+  renderItem(item) {
+    return (
+      <View style={[styles.item, {height: item.height}]}><Text>{item.name}</Text></View>
+    );
+  }
+
+  renderEmptyDate() {
+    return (
+      <View style={styles.emptyDate}><Text>This is empty date!</Text></View>
+    );
+  }
+
+  rowHasChanged(r1, r2) {
+    return r1.name !== r2.name;
+  }
+
+  timeToString(time) {
+    const date = new Date(time);
+    return date.toISOString().split('T')[0];
   }
 }
 
-const styles = {
-  imageStyle: {
-    marginTop: 20,
-    marginLeft: 10,
-    width: 40,
-    height: 40
-  },
-  containerStyle: {
+const styles = StyleSheet.create({
+  item: {
+    backgroundColor: 'white',
     flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center'
+    borderRadius: 5,
+    padding: 10,
+    marginRight: 10,
+    marginTop: 17
   },
-  dividerStyle: {
-    width: SCREEN_WIDTH * 0.9,
-    backgroundColor: '#2196F3'
-  },
-  buttonContainerStyle: {
-    width: SCREEN_WIDTH,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingBottom: 10
+  emptyDate: {
+    height: 15,
+    flex:1,
+    paddingTop: 30
   }
-};
-
-export default CalendarScreen;
+});
