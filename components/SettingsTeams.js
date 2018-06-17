@@ -34,7 +34,7 @@ class SettingsTeams extends Component {
 
 
     return (
-    <TouchableOpacity onPress={this.switchState} 
+    <TouchableWithoutFeedback onPress={this.switchState} 
         style={{
             height: 100,   
             width: 100,   
@@ -42,17 +42,23 @@ class SettingsTeams extends Component {
             borderRadius: 10,
             borderWidth: 0.2,
             borderColor: this.state.checked ? 'red' : 'green'           
-    }}>
-    <Text>
-    {name}
-    </Text>
+    }}
+    key={id}
+    >
+    <View>
     <Icon
         name={this.state.checked ? 'checkbox-marked' : 'checkbox-blank-outline'}
         color='#f50'
         type='material-community'
-        onPress={() => console.log('hello')} />
+        onPress={this.switchState} />
+    <Text>
+    {name}
+    </Text>
 
-    </TouchableOpacity>
+    </View>
+    
+
+    </TouchableWithoutFeedback>
 
     );
   }

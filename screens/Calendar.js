@@ -3,10 +3,6 @@ import { View, Platform, Image, Text, Button } from 'react-native';
 import { Divider } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
 import Expo from 'expo';
-import KeysButtons from '../components/KeysButtons';
-import CapoButtons from '../components/CapoButtons';
-import CapoKey from '../components/CapoKey';
-import BottomNavBar from '../components/BottomNavBar';
 
 import ChordsModal from '../modals/ChordsModal';
 import ViewChordsButton from '../components/ViewChordsButton';
@@ -56,27 +52,14 @@ class Calendar extends Component {
 
     return (
       <View style={{ flex: 1, backgroundColor: '#ddd' }}>
-        <ChordsModal />
 
         <View style={containerStyle}>
-          <KeysButtons />
           <Text>BOOOOOOOO</Text>
-          <Button 
-            title="Go to Details"
-            onPress={() => this.props.navigation.navigate('Main')} />
-            <Button 
-            title="Go to Map Screen"
-            onPress={() => this.props.navigation.navigate('MapScreen')} />
+        
 
           <Divider style={dividerStyle} />
-          <CapoButtons />
           <Divider style={dividerStyle} />
-          <CapoKey />
         </View>
-
-        {/* <ViewChordsButton style={buttonContainerStyle} /> */}
-        <BottomNavBar />
-        {/* BottomBannerAd */}
       </View>
     );
   }
