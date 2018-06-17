@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import { View, Platform, Image, Text, Button } from 'react-native';
 import { Divider } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
+import { Agenda } from 'react-native-calendars';
+
+
 import Expo from 'expo';
+import CapoButtons from '../components/CapoButtons';
+import CapoKey from '../components/CapoKey';
 
 import ChordsModal from '../modals/ChordsModal';
 import ViewChordsButton from '../components/ViewChordsButton';
@@ -55,10 +60,12 @@ class Calendar extends Component {
 
         <View style={containerStyle}>
           <Text>BOOOOOOOO</Text>
-        
-
-          <Divider style={dividerStyle} />
-          <Divider style={dividerStyle} />
+          <Button 
+            title="Go to Details"
+            onPress={() => this.props.navigation.navigate('Main')} />
+            <Button 
+            title="Go to Map Screen"
+            onPress={() => this.props.navigation.navigate('MapScreen')} />
         </View>
       </View>
     );
