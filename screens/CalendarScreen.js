@@ -40,9 +40,9 @@ class CalendarScreen extends Component {
     console.log("day", day)
     setTimeout(() => {
 
-      console.log("length", this.props.calendarDates.dates.length)
+      console.log("length", this.props.calendarDates.dates.length, "datesssss", this.props.calendarDates.dates[0].date)
 
-      for (let i = 0; i < 60; i++) {
+      for (let i = 0; i < this.props.calendarDates.dates.length; i++) {
         //How many days in the future you want the calendar to populate
         const time = day.timestamp + i * 24 * 60 * 60 * 1000;
         console.log("i", i, "time", time, "day", day)
@@ -64,18 +64,23 @@ class CalendarScreen extends Component {
         //   }
         // }
 
-        if (!this.state.items["2018-06-20"]) {
-          this.state.items["2018-06-20"] = [];
+        if (!this.state.items[this.props.calendarDates.dates[i].date]) {
+          this.state.items[this.props.calendarDates.dates[i].date] = [];
           const numItems = Math.floor(Math.random() * 5);
           console.log("numitems", numItems)
-          for (let j = 0; j < numItems; j++) {
-            console.log("this.state.items[strTime]", this.state.items["2018-06-20"])
-            this.state.items["2018-06-20"].push({
-              name: 'This is the event! ' + "2018-06-03",
-              height: Math.max(50, Math.floor(Math.random() * 150)),
-              location: "Mr. Tramps"
-            });
-          }
+          // for (let j = 0; j < numItems; j++) {
+          //   console.log("this.state.items[strTime]", this.state.items["2018-06-20"])
+          //   this.state.items["2018-06-20"].push({
+          //     name: 'This is the event! ' + "2018-06-03",
+          //     height: Math.max(50, Math.floor(Math.random() * 150)),
+          //     location: "Mr. Tramps"
+          //   });
+          // }
+          this.state.items[this.props.calendarDates.dates[i].date].push({
+            name: this.props.calendarDates.dates[i].date,
+            height: Math.max(50, Math.floor(Math.random() * 150)),
+            location: "Mr. Tramps"
+          });
         }
 
 
