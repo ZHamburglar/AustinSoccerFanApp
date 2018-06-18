@@ -62,7 +62,8 @@ class CalendarScreen extends Component {
             console.log("this.state.items[strTime]", this.state.items["2018-06-20"])
             this.state.items["2018-06-20"].push({
               name: 'This is the event! ' + "2018-06-03",
-              height: Math.max(50, Math.floor(Math.random() * 150))
+              height: Math.max(50, Math.floor(Math.random() * 150)),
+              location: "Mr. Tramps"
             });
           }
         }
@@ -88,7 +89,7 @@ class CalendarScreen extends Component {
 
   renderItem(item) {
     return (
-      <View style={[styles.item, {height: item.height}]}><Text>{item.name}</Text></View>
+      <View style={[styles.item, {height: item.height}]}><Text>{item.name}  {item.location}</Text></View>
     );
   }
 
