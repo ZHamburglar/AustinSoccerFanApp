@@ -4,6 +4,8 @@ import {
   View,
   StyleSheet
 } from 'react-native';
+import { connect } from 'react-redux';
+
 import {Agenda} from 'react-native-calendars';
 
 class CalendarScreen extends Component {
@@ -15,6 +17,12 @@ class CalendarScreen extends Component {
   }
 
   render() {
+
+    const { calendarDates } = this.props.calendarDates.dates
+    console.log("props for dates", this.props.calendarDates.dates, this.props.calendarDates.dates[0])
+    console.log(this.props.calendarDates.dates.length)
+
+
     return (
       <Agenda
         items={this.state.items}
@@ -28,9 +36,11 @@ class CalendarScreen extends Component {
   }
 
   loadItems(day) {
+    console.log()
     console.log("day", day)
     setTimeout(() => {
 
+      console.log("length", this.props.calendarDates.dates.length)
 
       for (let i = 0; i < 60; i++) {
         //How many days in the future you want the calendar to populate
@@ -125,5 +135,8 @@ const styles = StyleSheet.create({
   }
 });
 
+const mapStateToProps = state => {
+  return { calendarDates: state.calendarDates };
+};
 
-export default CalendarScreen;
+export default connect(mapStateToProps) (CalendarScreen);

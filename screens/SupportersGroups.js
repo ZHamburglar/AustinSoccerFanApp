@@ -9,7 +9,6 @@ import CapoKey from '../components/CapoKey';
 import BottomNavBar from '../components/BottomNavBar';
 import SettingsTeams from '../components/SettingsTeams';
 
-import icon from '../assets/icons/pure-icon.png';
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
 
 const cacheImages = images => images.map(image => {
