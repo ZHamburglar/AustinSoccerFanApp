@@ -30,24 +30,52 @@ class CalendarScreen extends Component {
   loadItems(day) {
     console.log("day", day)
     setTimeout(() => {
-      for (let i = -15; i < 85; i++) {
-        const time = day.timestamp + i * 24 * 60 * 60 * 1000;
-        console.log("i", i, "time", time)
 
+
+      for (let i = 0; i < 60; i++) {
+        //How many days in the future you want the calendar to populate
+        const time = day.timestamp + i * 24 * 60 * 60 * 1000;
+        console.log("i", i, "time", time, "day", day)
+
+        // Sets the dates that will be added
         const strTime = this.timeToString(time);
-        if (!this.state.items[strTime]) {
-          this.state.items[strTime] = [];
+        console.log('strTime', strTime)
+        
+        // if (!this.state.items[strTime]) {
+        //   this.state.items[strTime] = [];
+        //   const numItems = Math.floor(Math.random() * 5);
+        //   console.log("numitems", numItems)
+        //   for (let j = 0; j < numItems; j++) {
+        //     console.log("this.state.items[strTime]", this.state.items[strTime])
+        //     this.state.items[strTime].push({
+        //       name: 'This is the event! ' + strTime,
+        //       height: Math.max(50, Math.floor(Math.random() * 150))
+        //     });
+        //   }
+        // }
+
+        if (!this.state.items["2018-06-20"]) {
+          this.state.items["2018-06-20"] = [];
           const numItems = Math.floor(Math.random() * 5);
           console.log("numitems", numItems)
           for (let j = 0; j < numItems; j++) {
-            console.log(this.state.items[strTime])
-            this.state.items[strTime].push({
-              name: 'This is the event! ' + strTime,
+            console.log("this.state.items[strTime]", this.state.items["2018-06-20"])
+            this.state.items["2018-06-20"].push({
+              name: 'This is the event! ' + "2018-06-03",
               height: Math.max(50, Math.floor(Math.random() * 150))
             });
           }
         }
+
+
+
+
+
+
       }
+
+
+
       console.log("items", this.state.items);
       const newItems = {};
       Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
