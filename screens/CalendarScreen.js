@@ -16,6 +16,37 @@ class CalendarScreen extends Component {
     };
   }
 
+  componentDidMount() {
+    console.log('GrandChild did mount.');
+    console.log("Component did mount", this.props.calendarDates.dates, this.props.calendarDates.dates[0])
+    for (let i = 0; i < this.props.calendarDates.dates.length; i++) {
+      //How many days in the future you want the calendar to populate
+
+      if (!this.state.items[this.props.calendarDates.dates[i].date]) {
+        this.state.items[this.props.calendarDates.dates[i].date] = [];
+
+        this.state.items[this.props.calendarDates.dates[i].date].push({
+          name: this.props.calendarDates.dates[i].name,
+          height: Math.max(50, Math.floor(Math.random() * 150)),
+          location: "Mr. Tramps"
+        });
+      } else {
+        this.state.items[this.props.calendarDates.dates[i].date].push({
+          name: this.props.calendarDates.dates[i].name,
+          height: Math.max(50, Math.floor(Math.random() * 150)),
+          location: "Mr. Tramps"
+        })
+      }
+
+
+
+
+
+
+    }
+
+  }
+
   render() {
 
     const { calendarDates } = this.props.calendarDates.dates
@@ -38,73 +69,44 @@ class CalendarScreen extends Component {
   loadItems(day) {
     console.log()
     console.log("day", day)
-    setTimeout(() => {
+    // setTimeout(() => {
 
-      console.log("length", this.props.calendarDates.dates.length, "datesssss", this.props.calendarDates.dates[0].date)
+    //   console.log("length", this.props.calendarDates.dates.length, "datesssss", this.props.calendarDates.dates[0].date)
 
-      for (let i = 0; i < this.props.calendarDates.dates.length; i++) {
-        //How many days in the future you want the calendar to populate
-        const time = day.timestamp + i * 24 * 60 * 60 * 1000;
-        console.log("i", i, "time", time, "day", day)
+    //   for (let i = 0; i < this.props.calendarDates.dates.length; i++) {
+    //     //How many days in the future you want the calendar to populate
+    //     const time = day.timestamp + i * 24 * 60 * 60 * 1000;
+    //     console.log("i", i, "time", time, "day", day)
 
-        // Sets the dates that will be added
-        const strTime = this.timeToString(time);
-        console.log('strTime', strTime)
-        
-        // if (!this.state.items[strTime]) {
-        //   this.state.items[strTime] = [];
-        //   const numItems = Math.floor(Math.random() * 5);
-        //   console.log("numitems", numItems)
-        //   for (let j = 0; j < numItems; j++) {
-        //     console.log("this.state.items[strTime]", this.state.items[strTime])
-        //     this.state.items[strTime].push({
-        //       name: 'This is the event! ' + strTime,
-        //       height: Math.max(50, Math.floor(Math.random() * 150))
-        //     });
-        //   }
-        // }
+    //     if (!this.state.items[this.props.calendarDates.dates[i].date]) {
+    //       this.state.items[this.props.calendarDates.dates[i].date] = [];
 
-        if (!this.state.items[this.props.calendarDates.dates[i].date]) {
-          this.state.items[this.props.calendarDates.dates[i].date] = [];
-          const numItems = Math.floor(Math.random() * 5);
-          console.log("numitems", numItems)
-          // for (let j = 0; j < numItems; j++) {
-          //   console.log("this.state.items[strTime]", this.state.items["2018-06-20"])
-          //   this.state.items["2018-06-20"].push({
-          //     name: 'This is the event! ' + "2018-06-03",
-          //     height: Math.max(50, Math.floor(Math.random() * 150)),
-          //     location: "Mr. Tramps"
-          //   });
-          // }
-          this.state.items[this.props.calendarDates.dates[i].date].push({
-            name: this.props.calendarDates.dates[i].date,
-            height: Math.max(50, Math.floor(Math.random() * 150)),
-            location: "Mr. Tramps"
-          });
-        }
-
-
-
-
-
-
-      }
-
-
-
-      console.log("items", this.state.items);
-      const newItems = {};
-      Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
-      this.setState({
-        items: newItems
-      });
-    }, 1000);
-    // console.log(`Load Items for ${day.year}-${day.month}`);
+    //       this.state.items[this.props.calendarDates.dates[i].date].push({
+    //         name: this.props.calendarDates.dates[i].name,
+    //         height: Math.max(50, Math.floor(Math.random() * 150)),
+    //         location: "Mr. Tramps"
+    //       });
+    //     } else {
+    //       this.state.items[this.props.calendarDates.dates[i].date].push({
+    //         name: this.props.calendarDates.dates[i].name,
+    //         height: Math.max(50, Math.floor(Math.random() * 150)),
+    //         location: "Mr. Tramps"
+    //       })
+    //     }
+    //   }
+    //   console.log("items", this.state.items);
+    //   const newItems = {};
+    //   Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
+    //   this.setState({
+    //     items: newItems
+    //   });
+    // }, 1000);
+    // // console.log(`Load Items for ${day.year}-${day.month}`);
   }
 
   renderItem(item) {
     return (
-      <View style={[styles.item, {height: item.height}]}><Text>{item.name}  {item.location}</Text></View>
+      <View style={[styles.item, {height: item.height}]}><Text>{item.name}</Text></View>
     );
   }
 
