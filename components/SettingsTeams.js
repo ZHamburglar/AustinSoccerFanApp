@@ -33,8 +33,6 @@ class SettingsTeams extends Component {
     const { logoSize } = styles;
     const { id, name, logo } = this.props.leagueteams;
     console.log('boohoo', {logo})
-
-
     return (
     <TouchableWithoutFeedback onPress={this.switchState} 
         style={{
@@ -61,12 +59,8 @@ class SettingsTeams extends Component {
     <Text>
     {name}
     </Text>
-
     </View>
-    
-
     </TouchableWithoutFeedback>
-
     );
   }
 }
