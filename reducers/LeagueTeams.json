@@ -2,95 +2,118 @@
     "MLS": [
            {
               "id": 0,
-              "name": "Atlanta United"
+              "name": "Atlanta United",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 1,
-              "name": "Chicago Fire"
+              "name": "Chicago Fire",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 2,
-              "name": "FC Cincinatti"
+              "name": "FC Cincinatti",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 3,
-              "name": "Colorado Rapids"
+              "name": "Colorado Rapids",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 4,
-              "name": "D.C. United"
+              "name": "D.C. United",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 5,
-              "name": "FC Dallas"
+              "name": "FC Dallas",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 6,
-              "name": "Houston Dynamo"
+              "name": "Houston Dynamo",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 7,
-              "name": "LA Galaxy"
+              "name": "LA Galaxy",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 8,
-              "name": "LAFC"
+              "name": "LAFC",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 9,
-              "name": "Minnesota United"
+              "name": "Minnesota United",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 10,
-              "name": "Montreal Impact"
+              "name": "Montreal Impact",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 11,
-              "name": "New England Revolution"
+              "name": "New England Revolution",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 12,
-              "name": "NYCFC"
+              "name": "NYCFC",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 13,
-              "name": "New York Red Bulls"
+              "name": "New York Red Bulls",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 14,
-              "name": "Orlando City FC"
+              "name": "Orlando City FC",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 15,
-              "name": "Philadelphia Union"
+              "name": "Philadelphia Union",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 16,
-              "name": "Portland Timbers"
+              "name": "Portland Timbers",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 17,
-              "name": "Real Salt Lake"
+              "name": "Real Salt Lake",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 18,
-              "name": "San Jose Earthquakes"
+              "name": "San Jose Earthquakes",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 19,
-              "name": "Seattle Sounders FC"
+              "name": "Seattle Sounders FC",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 20,
-              "name": "Sporting KC"
+              "name": "Sporting KC",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 21,
-              "name": "Toronto FC"
+              "name": "Toronto FC",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            },
            {
               "id": 22,
-              "name": "Vancouver Whitecaps FC"
+              "name": "Vancouver Whitecaps FC",
+              "logo": "../assets/logos/MLS/AUFC_logo.png"
            }
         ],
     

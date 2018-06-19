@@ -4,6 +4,7 @@ import {
   TouchableWithoutFeedback,
   View,
   LayoutAnimation,
+  Image,
   TouchableOpacity
 } from 'react-native';
 import { Icon } from 'react-native-elements'
@@ -29,8 +30,9 @@ class SettingsTeams extends Component {
 
 
   render() {
-    const { id, name } = this.props.leagueteams;
-    console.log('boohoo', this.props.leagueteams)
+    const { logoSize } = styles;
+    const { id, name, logo } = this.props.leagueteams;
+    console.log('boohoo', {logo})
 
 
     return (
@@ -46,6 +48,11 @@ class SettingsTeams extends Component {
     key={id}
     >
     <View>
+    <Image 
+    source={require("../assets/logos/MLS/AUFC_logo.png")}
+    style={logoSize}
+    />
+    
     <Icon
         name={this.state.checked ? 'checkbox-marked' : 'checkbox-blank-outline'}
         color='#f50'
@@ -72,6 +79,10 @@ const styles = {
   descriptionStyle: {
     paddingLeft: 10,
     paddingRight: 10
+  },
+  logoSize: {
+    width: 50,
+    height: 50
   }
 };
 
