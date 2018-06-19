@@ -11,6 +11,6 @@ export default combineReducers({
   selectedValues: selectedValuesReducer, 
   modal: modalReducer,
   leagueteams: LeagueTeamsReducer,
-  mapmarkers: AustinMapMarkers,
+  mapMarkers: AustinMapMarkers,
   calendarDates: CalendarDatesReducer
 });

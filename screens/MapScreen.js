@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { View, Platform, Image, Text, Button, Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { Divider } from 'react-native-elements';
+import { connect } from 'react-redux';
+
 import Expo from 'expo';
 
-import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import icon from '../assets/icons/pure-icon.png';
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
@@ -40,6 +40,9 @@ class MapScreen extends Component {
   render() {
     const { containerStyle, dividerStyle, buttonContainerStyle, container, mapView } = styles;
 
+    const { MapMarkers } = this.props.mapMarkers.locations
+    console.log("props for markers", this.props.mapMarkers.locations)
+
     return (
       <View>
         <View style={container}>
@@ -53,7 +56,19 @@ class MapScreen extends Component {
                 longitudeDelta: 0.0421,
               }}
           >
+          
+          {this.props.mapMarkers.locations.map(MapMarker => 
           <Marker 
+          key={MapMarker.id} 
+          coordinate={{ latitude: MapMarker.latitude, longitude: MapMarker.longitude }}
+          title={MapMarker.name}
+          description={MapMarker.description}
+          type={MapMarker.type}
+          image={require('../assets/icons/beer-jar.png')}
+
+          />)} 
+          
+          {/* <Marker 
           coordinate={{ latitude: 30.361358, longitude: -97.7161855 }} 
           title={"Mr. Tramps"}
           description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
@@ -105,7 +120,7 @@ class MapScreen extends Component {
           description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
           opacity={ .8}
           image={require('../assets/icons/shop.png')}
-          />
+          /> */}
 
           
         </MapView>
@@ -149,4 +164,8 @@ const styles = {
   }
 };
 
-export default MapScreen;
+const mapStateToProps = state => {
+  return { mapMarkers: state.mapMarkers };
+};
+
+export default connect(mapStateToProps) (MapScreen);
