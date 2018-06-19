@@ -7,14 +7,6 @@ import Expo from 'expo';
 import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-
-import KeysButtons from '../components/KeysButtons';
-import CapoButtons from '../components/CapoButtons';
-import CapoKey from '../components/CapoKey';
-import BottomNavBar from '../components/BottomNavBar';
-
-import ChordsModal from '../modals/ChordsModal';
-import ViewChordsButton from '../components/ViewChordsButton';
 import icon from '../assets/icons/pure-icon.png';
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
 
@@ -27,23 +19,7 @@ const cacheImages = images => images.map(image => {
 });
 
 class MapScreen extends Component {
-  // static navigationOptions = () => ({
-  //   title: 'Austin Places',
-  //   headerStyle: {
-  //     height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
-  //     backgroundColor: '#2196F3'
-  //   },
-  //   headerTitleStyle: {
-  //     marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
-  //     color: 'white'
-  //   },
-  //   headerLeft: (
-  //     <Image
-  //       source={icon}
-  //       style={styles.imageStyle}
-  //     />
-  //   )
-  // });
+
 
   
 
@@ -133,18 +109,7 @@ class MapScreen extends Component {
 
           
         </MapView>
-
         </View>
-        <View>
-
-
-          {/* <BottomNavBar /> */}
-          
-        </View>
-
-
-        
-
       </View>
     );
   }
