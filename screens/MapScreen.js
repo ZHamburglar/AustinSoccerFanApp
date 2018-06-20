@@ -31,6 +31,25 @@ class MapScreen extends Component {
   componentWillMount() {
   }
 
+  renderMarkers(){
+    console.log("this works", this.props.mapMarkers)
+    for(var i = 0; i < this.props.mapMarkers.locations.length; i++) {
+      console.log("items", this.props.mapMarkers.locations[i])
+      if (this.props.mapMarkers.locations[i].type == "pubmain"){
+        console.log("pubmain")
+        return (
+          <Marker 
+          key={this.props.mapMarkers.locations[i].id}
+          coordinate={{ latitude: this.props.mapMarkers.locations[i].latitude, longitude: this.props.mapMarkers.locations[i].longitude }}
+          title={this.props.mapMarkers.locations[i].name}
+          description={this.props.mapMarkers.locations[i].description}
+          image={require("../assets/icons/beer-jar.png")}
+
+          />
+        );
+      }
+    }
+  }
 
   render() {
     const { containerStyle, dividerStyle, buttonContainerStyle, container, mapView } = styles;
@@ -55,17 +74,19 @@ class MapScreen extends Component {
                 longitudeDelta: 0.0421,
               }}
           >
+
+          {this.renderMarkers()}
           
-          {this.props.mapMarkers.locations.map(MapMarker => 
+          {/* {this.props.mapMarkers.locations.map(MapMarker => 
           <Marker 
           key={MapMarker.id}
           coordinate={{ latitude: MapMarker.latitude, longitude: MapMarker.longitude }}
           title={MapMarker.name}
           description={MapMarker.description}
           type={MapMarker.type}
-          image={require('../assets/icons/beer-jar.png')}
+          image={{uri: MapMarker.icon}}
 
-          />)} 
+          />)}  */}
           
           {/* <Marker 
           coordinate={{ latitude: 30.361358, longitude: -97.7161855 }} 
