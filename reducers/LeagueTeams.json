@@ -3,117 +3,140 @@
            {
               "id": 0,
               "name": "Atlanta United",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 103
            },
            {
               "id": 1,
               "name": "Chicago Fire",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 2,
               "name": "FC Cincinatti",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 3,
               "name": "Colorado Rapids",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 4,
               "name": "D.C. United",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 5,
               "name": "FC Dallas",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 6,
               "name": "Houston Dynamo",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 7,
               "name": "LA Galaxy",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 8,
               "name": "LAFC",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 9,
               "name": "Minnesota United",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 10,
               "name": "Montreal Impact",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 11,
               "name": "New England Revolution",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 12,
               "name": "NYCFC",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 13,
               "name": "New York Red Bulls",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 14,
               "name": "Orlando City FC",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 15,
               "name": "Philadelphia Union",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 16,
               "name": "Portland Timbers",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 17,
               "name": "Real Salt Lake",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 18,
               "name": "San Jose Earthquakes",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 19,
               "name": "Seattle Sounders FC",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 20,
               "name": "Sporting KC",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 21,
               "name": "Toronto FC",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            },
            {
               "id": 22,
               "name": "Vancouver Whitecaps FC",
-              "logo": "../assets/logos/MLS/AUFC_logo.png"
+              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "homebar": 101
            }
         ],
     

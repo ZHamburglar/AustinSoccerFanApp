@@ -29,26 +29,9 @@ class MapScreen extends Component {
     console.log("wooo this is pressed")
   }
 
-
-
-  // renderMarkers(){
-  //   console.log("this works", this.props.mapMarkers)
-  //   for(var i = 0; i < this.props.mapMarkers.locations.length; i++) {
-  //     console.log("items", this.props.mapMarkers.locations[i])
-  //     if (this.props.mapMarkers.locations[i].type == "pubmain"){
-  //       console.log("pubmain")
-  //       return (
-  //         <Marker 
-  //         key={this.props.mapMarkers.locations[i].id}
-  //         coordinate={{ latitude: this.props.mapMarkers.locations[i].latitude, longitude: this.props.mapMarkers.locations[i].longitude }}
-  //         title={this.props.mapMarkers.locations[i].name}
-  //         description={this.props.mapMarkers.locations[i].description}
-  //         image={require("../assets/icons/beer-jar.png")}
-  //         />
-  //       );
-  //     }
-  //   }
-  // }
+  addDailyEvents(){
+    console.log("Adding daily events")
+  }
 
   render() {
     const { container, mapView } = styles;
@@ -62,6 +45,21 @@ class MapScreen extends Component {
 
     if (this.props.mapMarkers.locations){
       console.log('wooooooo')
+      var dateObj = new Date();
+      var month = dateObj.getUTCMonth() + 1; //months from 1-12
+      var day = dateObj.getUTCDate();
+      var year = dateObj.getUTCFullYear();
+      todayDate = year + "-" + month + "-" + day;
+
+
+      console.log(todayDate, this.props.events, this.props.events.length)
+      for (i = 0; i < this.props.events.length; i++) { 
+        console.log(i, this.props.events[i].date, todayDate)
+        // if(this.props.events[i].date === todayDate){
+        //   console.log("hello")
+        // }
+      }
+
     }
 
 
@@ -93,6 +91,10 @@ class MapScreen extends Component {
             <Callout>
               <View>
                 <Text>{MapMarker.name}</Text>
+                <Text>SG's</Text>
+                <Text>{MapMarker.id}</Text>
+                {this.addDailyEvents()}
+
               </View>
             </Callout>
           </Marker>
@@ -141,7 +143,10 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-  return { mapMarkers: state.mapMarkers };
+  return { mapMarkers: state.mapMarkers,
+          supportersGroups: state.leagueteams,
+          events: state.calendarDates.dates
+  };
 };
 
 export default connect(mapStateToProps) (MapScreen);

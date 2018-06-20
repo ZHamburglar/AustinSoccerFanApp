@@ -8,6 +8,7 @@
           "latitude": 30.361358,
           "longitude": -97.7161855,
           "date":"2018-06-20",
+          "location": 103,
           "type": "pubmain"
        },
        {
@@ -17,6 +18,7 @@
           "latitude": 30.2848235,
           "longitude": -97.7197796,
           "date":"2018-06-21",
+          "location": 103,
           "type": "pubmain"
        },
        {
@@ -26,6 +28,7 @@
           "latitude": 30.2982286,
           "longitude": -97.7052838,
           "date":"2018-06-22",
+          "location": 103,
           "type": "pubmain"
        },
        {
@@ -35,6 +38,7 @@
           "latitude": 30.267722,
           "longitude": -97.743317,
           "date":"2018-06-23",
+          "location": 103,
             "type": "pubmain"
        },
        {
@@ -44,6 +48,7 @@
         "latitude": 30.388073,
         "longitude": -97.719939,
         "date":"2018-06-23",
+        "location": 103,
         "type": "stadium"
         },
         {
@@ -53,6 +58,7 @@
         "latitude": 30.3731628,
         "longitude": -97.72839,
         "date":"2018-06-20",
+        "location": 103,
         "type": "store"
          },
          {
@@ -62,7 +68,7 @@
             "latitude": 30.264563,
             "longitude": -97.760819,
             "date":"2018-06-20",
-
+            "location": 103,
             "type": "pubmain"
          }
     ]
