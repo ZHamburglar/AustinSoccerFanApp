@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Platform, Image, Text, Button, Dimensions } from 'react-native';
-import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import { Divider } from 'react-native-elements';
 import { connect } from 'react-redux';
 
@@ -23,6 +23,10 @@ class MapScreen extends Component {
   }
 
   componentWillMount() {
+  }
+
+  iconHasBeenPressed(){
+    console.log("wooo this is pressed")
   }
 
 
@@ -60,6 +64,8 @@ class MapScreen extends Component {
       console.log('wooooooo')
     }
 
+
+
     return (
       <View>
         <View style={container}>
@@ -83,7 +89,13 @@ class MapScreen extends Component {
           title={MapMarker.name}
           description={MapMarker.description}
           image={markerImages[MapMarker.type]}
-          />
+          >
+            <Callout>
+              <View>
+                <Text>{MapMarker.name}</Text>
+              </View>
+            </Callout>
+          </Marker>
           
           )} 
           
