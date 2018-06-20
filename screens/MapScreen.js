@@ -6,18 +6,12 @@ import { connect } from 'react-redux';
 
 import Expo from 'expo';
 
-import MarkerComponent from '../components/MapMarkers'
-
+// import MarkerComponent from '../components/MapMarkers'
 
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
 
 const window = Dimensions.get('window');
 
-
-const cacheImages = images => images.map(image => {
-  if (typeof image === 'string') return Image.prefetch(image);
-  return Expo.Asset.fromModule(image).downloadAsync();
-});
 
 class MapScreen extends Component {
 
@@ -31,31 +25,36 @@ class MapScreen extends Component {
   componentWillMount() {
   }
 
-  renderMarkers(){
-    console.log("this works", this.props.mapMarkers)
-    for(var i = 0; i < this.props.mapMarkers.locations.length; i++) {
-      console.log("items", this.props.mapMarkers.locations[i])
-      if (this.props.mapMarkers.locations[i].type == "pubmain"){
-        console.log("pubmain")
-        return (
-          <Marker 
-          key={this.props.mapMarkers.locations[i].id}
-          coordinate={{ latitude: this.props.mapMarkers.locations[i].latitude, longitude: this.props.mapMarkers.locations[i].longitude }}
-          title={this.props.mapMarkers.locations[i].name}
-          description={this.props.mapMarkers.locations[i].description}
-          image={require("../assets/icons/beer-jar.png")}
 
-          />
-        );
-      }
-    }
-  }
+
+  // renderMarkers(){
+  //   console.log("this works", this.props.mapMarkers)
+  //   for(var i = 0; i < this.props.mapMarkers.locations.length; i++) {
+  //     console.log("items", this.props.mapMarkers.locations[i])
+  //     if (this.props.mapMarkers.locations[i].type == "pubmain"){
+  //       console.log("pubmain")
+  //       return (
+  //         <Marker 
+  //         key={this.props.mapMarkers.locations[i].id}
+  //         coordinate={{ latitude: this.props.mapMarkers.locations[i].latitude, longitude: this.props.mapMarkers.locations[i].longitude }}
+  //         title={this.props.mapMarkers.locations[i].name}
+  //         description={this.props.mapMarkers.locations[i].description}
+  //         image={require("../assets/icons/beer-jar.png")}
+  //         />
+  //       );
+  //     }
+  //   }
+  // }
 
   render() {
-    const { containerStyle, dividerStyle, buttonContainerStyle, container, mapView } = styles;
-
+    const { container, mapView } = styles;
     const { MapMarkers } = this.props.mapMarkers.locations
     console.log("props for markers", this.props.mapMarkers.locations)
+    const markerImages = {
+      pubmain: require("../assets/icons/beer-jar.png"),
+      store: require("../assets/icons/beer-jar.png"),
+      stadium: require("../assets/icons/beer-jar.png")
+    };
 
     if (this.props.mapMarkers.locations){
       console.log('wooooooo')
@@ -75,73 +74,18 @@ class MapScreen extends Component {
               }}
           >
 
-          {this.renderMarkers()}
+          {/* {this.renderMarkers()} */}
           
-          {/* {this.props.mapMarkers.locations.map(MapMarker => 
+          {this.props.mapMarkers.locations.map(MapMarker => 
           <Marker 
           key={MapMarker.id}
           coordinate={{ latitude: MapMarker.latitude, longitude: MapMarker.longitude }}
           title={MapMarker.name}
           description={MapMarker.description}
-          type={MapMarker.type}
-          image={{uri: MapMarker.icon}}
-
-          />)}  */}
-          
-          {/* <Marker 
-          coordinate={{ latitude: 30.361358, longitude: -97.7161855 }} 
-          title={"Mr. Tramps"}
-          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
-          opacity={ .8}
-          image={require('../assets/icons/beer-jar.png')}
-
-          />
-          <Marker 
-          coordinate={{ latitude: 30.2848235, longitude: -97.7197796 }} 
-          title={"Haymaker"}
-          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
-          opacity={ .8}
-          image={require('../assets/icons/beer-jar.png')}
-
-          />
-          <Marker 
-          coordinate={{ latitude: 30.2982286, longitude: -97.7052838 }} 
-          title={"B.D. Riley's @ Mueller"}
-          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
-          opacity={ .8}
-          image={require('../assets/icons/beer-jar.png')}
-
-          />
-          <Marker 
-          coordinate={{ latitude: 30.267722, longitude: -97.743317 }} 
-          title={"B.D. Riley's Downtown"}
-          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
-          opacity={ .8}
-          image={require('../assets/icons/beer-jar.png')}
-          />
-          <Marker 
-          coordinate={{ latitude: 30.388073, longitude: -97.719939 }} 
-          title={"Austin Stadium"}
-          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
-          opacity={ .8}
-          image={require('../assets/icons/stadium.png')}
-          />
-          <Marker 
-          coordinate={{ latitude: 30.3731628, longitude: -97.72839 }} 
-          title={"Soccer Corner"}
-          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
-          opacity={ .8}
-          image={require('../assets/icons/shop.png')}
+          image={markerImages[MapMarker.type]}
           />
           
-          <Marker 
-          coordinate={{ latitude: 30.264563, longitude: -97.760819 }} 
-          title={"Soccer Corner"}
-          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
-          opacity={ .8}
-          image={require('../assets/icons/shop.png')}
-          /> */}
-
+          )} 
           
         </MapView>
         </View>

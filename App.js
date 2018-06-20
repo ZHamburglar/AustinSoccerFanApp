@@ -21,15 +21,6 @@ import Settings from './screens/Settings';
 
 export default class App extends Component {
   render() {
-    //   const MainNavigator = createStackNavigator({
-    //     Main: { screen: MainScreen },
-    //     Settings: { screen: Settings},
-    //     MapScreen: { screen: MapScreen}
-    //   },
-    //   {
-    //     initialRouteName: 'MapScreen'
-    //   }
-    // );
 
     const IndexPage = createMaterialBottomTabNavigator({
       MainScreen: {
@@ -115,7 +106,7 @@ export default class App extends Component {
     },
     
      {
-      initialRouteName: 'MapScreen',
+      initialRouteName: 'Settings',
       activeTintColor: '#f0edf6',
       inactiveTintColor: '#3e2465',
       barStyle: {
