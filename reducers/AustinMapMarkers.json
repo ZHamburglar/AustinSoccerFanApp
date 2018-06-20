@@ -7,7 +7,8 @@
           "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
           "latitude": 30.361358,
           "longitude": -97.7161855,
-          "type": "pubmain"
+          "type": "pubmain",
+          "icon": "../assets/icons/beer-jar.png"
        },
        {
           "id": 101,
@@ -15,7 +16,9 @@
           "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
           "latitude": 30.2848235,
           "longitude": -97.7197796,
-          "type": "pubmain"
+          "type": "pubmain",
+          "icon": "../assets/icons/beer-jar.png"
+
        },
        {
           "id": 102,
@@ -23,7 +26,9 @@
           "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
           "latitude": 30.2982286,
           "longitude": -97.7052838,
-          "type": "pubmain"
+          "type": "pubmain",
+          "icon": "../assets/icons/beer-jar.png"
+
        },
        {
           "id": 103,
@@ -31,7 +36,9 @@
           "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
           "latitude": 30.267722,
           "longitude": -97.743317,
-          "type": "pubmain"
+          "type": "pubmain",
+          "icon": "../assets/icons/beer-jar.png"
+
        },
        {
         "id": 104,
@@ -39,7 +46,9 @@
         "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
         "latitude": 30.388073,
         "longitude": -97.719939,
-        "type": "stadium"
+        "type": "stadium",
+        "icon": "../assets/icons/beer-jar.png"
+
         },
         {
             "id": 105,
@@ -47,7 +56,9 @@
             "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
             "latitude": 30.3731628,
             "longitude": -97.72839,
-            "type": "store"
+            "type": "store",
+            "icon": "../assets/icons/beer-jar.png"
+
          },
          {
             "id": 106,
@@ -55,7 +66,9 @@
             "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
             "latitude": 30.264563,
             "longitude": -97.760819,
-            "type": "pubmain"
+            "type": "pubmain",
+            "icon": "../assets/icons/beer-jar.png"
+
          }
     ]
  }

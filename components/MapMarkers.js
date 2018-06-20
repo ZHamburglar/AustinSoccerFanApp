@@ -4,8 +4,6 @@ import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { Divider } from 'react-native-elements';
 import Expo from 'expo';
 
-import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import icon from '../assets/icons/pure-icon.png';
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
@@ -37,12 +35,13 @@ class MapMarkers extends Component {
 
   render() {
     const { containerStyle, dividerStyle, buttonContainerStyle, container, mapView } = styles;
+    console.log("props", this.props, this.props.title, "coordinates", this.props.latitude)
 
     return (
           <Marker 
-          coordinate={{ latitude: 30.361358, longitude: -97.7161855 }} 
-          title={"Mr. Tramps"}
-          description={"Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches."}
+          coordinate={{latitude: 30.361358, longitude: -97.7161855 }} 
+          title={this.props.title}
+          description={this.props.description}
           opacity={ .8}
           image={require('../assets/icons/beer-jar.png')}
           />

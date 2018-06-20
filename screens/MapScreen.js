@@ -6,8 +6,9 @@ import { connect } from 'react-redux';
 
 import Expo from 'expo';
 
+import MarkerComponent from '../components/MapMarkers'
 
-import icon from '../assets/icons/pure-icon.png';
+
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
 
 const window = Dimensions.get('window');
@@ -24,24 +25,22 @@ class MapScreen extends Component {
   
 
   state = {
-    appIsReady: false
+    appIsReady: 'Hello'
   }
 
   componentWillMount() {
-    this._loadAssetsAsync();
   }
 
-  async _loadAssetsAsync() {
-    const imageAssets = cacheImages([icon]);
-    await Promise.all([...imageAssets]);
-    this.setState({ appIsReady: true });
-  }
 
   render() {
     const { containerStyle, dividerStyle, buttonContainerStyle, container, mapView } = styles;
 
     const { MapMarkers } = this.props.mapMarkers.locations
     console.log("props for markers", this.props.mapMarkers.locations)
+
+    if (this.props.mapMarkers.locations){
+      console.log('wooooooo')
+    }
 
     return (
       <View>
@@ -59,7 +58,7 @@ class MapScreen extends Component {
           
           {this.props.mapMarkers.locations.map(MapMarker => 
           <Marker 
-          key={MapMarker.id} 
+          key={MapMarker.id}
           coordinate={{ latitude: MapMarker.latitude, longitude: MapMarker.longitude }}
           title={MapMarker.name}
           description={MapMarker.description}
