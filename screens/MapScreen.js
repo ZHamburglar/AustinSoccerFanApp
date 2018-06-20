@@ -33,14 +33,18 @@ class MapScreen extends Component {
     console.log("Adding daily events")
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    if (month < 10){
+      var fullmonth = "0" + month
+    }
     var day = dateObj.getUTCDate();
     var year = dateObj.getUTCFullYear();
-    todayDate = year + "-" + month + "-" + day;
+    todayDate = year + "-" + fullmonth + "-" + day;
 
 
-    console.log(todayDate, this.props.events, this.props.events.length)
+    console.log(todayDate, this.props.events, this.props.events.length, fullmonth)
     for (i = 0; i < this.props.events.length; i++) { 
       console.log(i, this.props.events[i].date, todayDate)
+      console.log(typeof this.props.events[i].date, typeof todayDate)
       if (todayDate === this.props.events[i].date){
         console.log("equals")
       } else {

@@ -3,10 +3,8 @@
     "dates": [
        {
           "id": 100000,
-          "name": "Mr. Tramps",
+          "name": "Barrrrrr",
           "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
-          "latitude": 30.361358,
-          "longitude": -97.7161855,
           "date":"2018-06-20",
           "location": 103,
           "type": "pubmain"
