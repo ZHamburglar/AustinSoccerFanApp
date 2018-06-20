@@ -31,6 +31,22 @@ class MapScreen extends Component {
 
   addDailyEvents(){
     console.log("Adding daily events")
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+    todayDate = year + "-" + month + "-" + day;
+
+
+    console.log(todayDate, this.props.events, this.props.events.length)
+    for (i = 0; i < this.props.events.length; i++) { 
+      console.log(i, this.props.events[i].date, todayDate)
+      if (todayDate === this.props.events[i].date){
+        console.log("equals")
+      } else {
+        console.log("not equal")
+      }
+    }
   }
 
   render() {
@@ -45,20 +61,7 @@ class MapScreen extends Component {
 
     if (this.props.mapMarkers.locations){
       console.log('wooooooo')
-      var dateObj = new Date();
-      var month = dateObj.getUTCMonth() + 1; //months from 1-12
-      var day = dateObj.getUTCDate();
-      var year = dateObj.getUTCFullYear();
-      todayDate = year + "-" + month + "-" + day;
-
-
-      console.log(todayDate, this.props.events, this.props.events.length)
-      for (i = 0; i < this.props.events.length; i++) { 
-        console.log(i, this.props.events[i].date, todayDate)
-        // if(this.props.events[i].date === todayDate){
-        //   console.log("hello")
-        // }
-      }
+  
 
     }
 
