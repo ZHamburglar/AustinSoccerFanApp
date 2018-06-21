@@ -26,9 +26,9 @@ class MapScreen extends Component {
 
         teamLogos.push(this.props.supportersGroups.MLS[i])
 
-        console.log("team logos",teamLogos)
+        // console.log("team logos",teamLogos)
 
-
+        
 
         // return(
         //   <View>
@@ -43,7 +43,15 @@ class MapScreen extends Component {
 
 
       } 
+      
     }
+    console.log("team logos",teamLogos)
+    return (
+      <View>
+        <Text>Hello</Text>
+      </View>
+    )
+
   }
 
   addDailyEvents(markerLocation){
