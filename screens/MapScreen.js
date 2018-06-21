@@ -13,21 +13,35 @@ const window = Dimensions.get('window');
 
 class MapScreen extends Component {
 
+  
+
   addSupporters(markerLocation, teamImages){
-    console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
+    // console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
+    var teamLogos = []
     for (i = 0; i < this.props.supportersGroups.MLS.length; i++) { 
       // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
-      if (this.props.supportersGroups.MLS[i].homebar == markerLocation.MapMarker.id){
 
-        return(
-          <View>
-            <Text>{this.props.supportersGroups.MLS[i].name}</Text>
-            <Image
-              style={{width: 25, height: 25}}
-              source={teamImages[this.props.supportersGroups.MLS[i].id]}
-            />
-          </View>
-        )
+      if (this.props.supportersGroups.MLS[i].homebar == markerLocation.MapMarker.id){
+        
+
+        teamLogos.push(this.props.supportersGroups.MLS[i])
+
+        console.log("team logos",teamLogos)
+
+
+
+        // return(
+        //   <View>
+        //     <Text>{this.props.supportersGroups.MLS[i].name}</Text>
+        //     <Image
+        //       style={{width: 25, height: 25}}
+        //       source={teamImages[this.props.supportersGroups.MLS[i].id]}
+        //     />
+        //   </View>
+        // )
+
+
+
       } 
     }
   }
@@ -45,7 +59,7 @@ class MapScreen extends Component {
     var year = dateObj.getUTCFullYear();
     todayDate = year + "-" + fullmonth + "-" + day;
     let dailyEvents = []
-    console.log(todayDate, this.props.events, this.props.events.length, fullmonth)
+    // console.log(todayDate, this.props.events, this.props.events.length, fullmonth)
     for (i = 0; i < this.props.events.length; i++) { 
       // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
       if (todayDate === this.props.events[i].date && this.props.events[i].location == markerLocation.MapMarker.id){

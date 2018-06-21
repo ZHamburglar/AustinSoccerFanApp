@@ -32,8 +32,7 @@
            },
            {
               "id": 5,
-              "name": "FC Dallas",
-              
+              "name": "FC Dallas",            
               "logo": "../assets/logos/MLS/AUFC_logo.png",
               "homebar": 101
            },
@@ -77,7 +76,7 @@
               "id": 12,
               "name": "NYCFC",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 104
            },
            {
               "id": 13,
@@ -101,43 +100,43 @@
               "id": 16,
               "name": "Portland Timbers",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 102
            },
            {
               "id": 17,
               "name": "Real Salt Lake",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 102
            },
            {
               "id": 18,
               "name": "San Jose Earthquakes",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 106
            },
            {
               "id": 19,
               "name": "Seattle Sounders FC",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 105
            },
            {
               "id": 20,
               "name": "Sporting KC",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 104
            },
            {
               "id": 21,
               "name": "Toronto FC",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 103
            },
            {
               "id": 22,
               "name": "Vancouver Whitecaps FC",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 102
            }
         ],
     
