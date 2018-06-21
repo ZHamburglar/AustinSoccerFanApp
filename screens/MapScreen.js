@@ -29,28 +29,42 @@ class MapScreen extends Component {
     console.log("wooo this is pressed")
   }
 
-  addDailyEvents(){
-    console.log("Adding daily events")
+  addDailyEvents(markerLocation){
+    console.log("Adding daily events", markerLocation.MapMarker.id)
+    
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1; //months from 1-12
     if (month < 10){
       var fullmonth = "0" + month
+    } else {
+      var fullmonth = month
     }
     var day = dateObj.getUTCDate();
     var year = dateObj.getUTCFullYear();
     todayDate = year + "-" + fullmonth + "-" + day;
 
-
+    let dailyEvents = []
     console.log(todayDate, this.props.events, this.props.events.length, fullmonth)
     for (i = 0; i < this.props.events.length; i++) { 
       console.log(i, this.props.events[i].date, todayDate)
       console.log(typeof this.props.events[i].date, typeof todayDate)
-      if (todayDate === this.props.events[i].date){
+      console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
+      if (todayDate === this.props.events[i].date && this.props.events[i].location == markerLocation.MapMarker.id){
+        
         console.log("equals")
+        dailyEvents.push(this.props.events[i])
+        return(
+          <Text>This is working</Text>
+        )
+
       } else {
         console.log("not equal")
       }
     }
+
+    console.log('dailyEvents', dailyEvents)
+    
+
   }
 
   render() {
@@ -85,7 +99,6 @@ class MapScreen extends Component {
               }}
           >
 
-          {/* {this.renderMarkers()} */}
           
           {this.props.mapMarkers.locations.map(MapMarker => 
           <Marker 
@@ -100,7 +113,7 @@ class MapScreen extends Component {
                 <Text>{MapMarker.name}</Text>
                 <Text>SG's</Text>
                 <Text>{MapMarker.id}</Text>
-                {this.addDailyEvents()}
+                {this.addDailyEvents({MapMarker})}
 
               </View>
             </Callout>
