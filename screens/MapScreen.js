@@ -7,9 +7,7 @@ import { connect } from 'react-redux';
 import Expo from 'expo';
 
 // import MarkerComponent from '../components/MapMarkers'
-
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
-
 const window = Dimensions.get('window');
 
 
@@ -27,7 +25,6 @@ class MapScreen extends Component {
             <Image
               style={{width: 25, height: 25}}
               source={teamImages[this.props.supportersGroups.MLS[i].id]}
-              
             />
           </View>
         )
@@ -78,8 +75,8 @@ class MapScreen extends Component {
       0: require("../assets/logos/MLS/AUFC_logo.png"),
       1: require("../assets/logos/MLS/CHI15_Primary.png"),
       2: require("../assets/logos/MLS/AUFC_logo.png"),
-      3: require("../assets/logos/MLS/AUFC_logo.png"),
-      4: require("../assets/logos/MLS/AUFC_logo.png"),
+      3: require("../assets/logos/MLS/COL15_Primary.png"),
+      4: require("../assets/logos/MLS/DCUnited.jpg"),
       5: require("../assets/logos/MLS/AUFC_logo.png"),
       6: require("../assets/logos/MLS/AUFC_logo.png"),
       7: require("../assets/logos/MLS/AUFC_logo.png"),
