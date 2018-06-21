@@ -20,12 +20,14 @@ class MapScreen extends Component {
     for (i = 0; i < this.props.supportersGroups.MLS.length; i++) { 
       // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
       if (this.props.supportersGroups.MLS[i].homebar == markerLocation.MapMarker.id){
+
         return(
           <View>
             <Text>{this.props.supportersGroups.MLS[i].name}</Text>
             <Image
-              style={{width: 50, height: 50}}
+              style={{width: 25, height: 25}}
               source={teamImages[this.props.supportersGroups.MLS[i].id]}
+              
             />
           </View>
         )
