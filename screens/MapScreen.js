@@ -15,7 +15,7 @@ const window = Dimensions.get('window');
 
 class MapScreen extends Component {
 
-  addSupporters(markerLocation){
+  addSupporters(markerLocation, teamImages){
     console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
     for (i = 0; i < this.props.supportersGroups.MLS.length; i++) { 
       // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
@@ -23,7 +23,10 @@ class MapScreen extends Component {
         return(
           <View>
             <Text>{this.props.supportersGroups.MLS[i].name}</Text>
-
+            <Image
+              style={{width: 50, height: 50}}
+              source={teamImages[this.props.supportersGroups.MLS[i].id]}
+            />
           </View>
         )
       } 
@@ -69,6 +72,19 @@ class MapScreen extends Component {
       park: require("../assets/icons/soccerfieldhorifilled.png")
     };
 
+    const teamImages = {
+      0: require("../assets/logos/MLS/AUFC_logo.png"),
+      1: require("../assets/logos/MLS/CHI15_Primary.png"),
+      2: require("../assets/logos/MLS/AUFC_logo.png"),
+      3: require("../assets/logos/MLS/AUFC_logo.png"),
+      4: require("../assets/logos/MLS/AUFC_logo.png"),
+      5: require("../assets/logos/MLS/AUFC_logo.png"),
+      6: require("../assets/logos/MLS/AUFC_logo.png"),
+      7: require("../assets/logos/MLS/AUFC_logo.png"),
+      8: require("../assets/logos/MLS/AUFC_logo.png"),
+      9: require("../assets/logos/MLS/AUFC_logo.png")
+    }
+
     return (
       <View>
         <View style={container}>
@@ -93,9 +109,8 @@ class MapScreen extends Component {
             <Callout>
               <View>
                 <Text>{MapMarker.name}</Text>
-                <Text>SG's</Text>
                 <Text>{MapMarker.id}</Text>
-                {this.addSupporters({MapMarker})}
+                {this.addSupporters({MapMarker}, teamImages)}
 
                 {this.addDailyEvents({MapMarker})}
 
