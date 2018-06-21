@@ -69,6 +69,16 @@
             "type": "pubmain",
             "icon": "../assets/icons/beer-jar.png"
 
+         },
+         {
+            "id": 107,
+            "name": "Zilker Park",
+            "description": "Neighborhood pub features local & craft beers plus meals such as burgers, pizza & club sandwiches.",
+            "latitude": 30.2674046,
+            "longitude": -97.7672923,
+            "type": "park",
+            "icon": "../assets/icons/soccerfieldhorifilled.png"
+
          }
     ]
  }

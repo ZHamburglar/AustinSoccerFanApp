@@ -15,23 +15,23 @@ const window = Dimensions.get('window');
 
 class MapScreen extends Component {
 
+  addSupporters(markerLocation){
+    console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
+    for (i = 0; i < this.props.supportersGroups.MLS.length; i++) { 
+      // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
+      if (this.props.supportersGroups.MLS[i].homebar == markerLocation.MapMarker.id){
+        return(
+          <View>
+            <Text>{this.props.supportersGroups.MLS[i].name}</Text>
 
-  
-
-  state = {
-    appIsReady: 'Hello'
-  }
-
-  componentWillMount() {
-  }
-
-  iconHasBeenPressed(){
-    console.log("wooo this is pressed")
+          </View>
+        )
+      } 
+    }
   }
 
   addDailyEvents(markerLocation){
-    console.log("Adding daily events", markerLocation.MapMarker.id)
-    
+    // console.log("Adding daily events", markerLocation.MapMarker.id)
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1; //months from 1-12
     if (month < 10){
@@ -42,48 +42,32 @@ class MapScreen extends Component {
     var day = dateObj.getUTCDate();
     var year = dateObj.getUTCFullYear();
     todayDate = year + "-" + fullmonth + "-" + day;
-
     let dailyEvents = []
     console.log(todayDate, this.props.events, this.props.events.length, fullmonth)
     for (i = 0; i < this.props.events.length; i++) { 
-      console.log(i, this.props.events[i].date, todayDate)
-      console.log(typeof this.props.events[i].date, typeof todayDate)
-      console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
+      // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
       if (todayDate === this.props.events[i].date && this.props.events[i].location == markerLocation.MapMarker.id){
-        
-        console.log("equals")
         dailyEvents.push(this.props.events[i])
         return(
-          <Text>This is working</Text>
+          <View>
+            <Text>{this.props.events[i].eventDes}</Text>
+
+          </View>
         )
-
-      } else {
-        console.log("not equal")
-      }
+      } 
     }
-
-    console.log('dailyEvents', dailyEvents)
-    
-
   }
 
   render() {
     const { container, mapView } = styles;
     const { MapMarkers } = this.props.mapMarkers.locations
-    console.log("props for markers", this.props.mapMarkers.locations)
+    // console.log("props for markers", this.props.mapMarkers.locations)
     const markerImages = {
       pubmain: require("../assets/icons/beer-jar.png"),
-      store: require("../assets/icons/beer-jar.png"),
-      stadium: require("../assets/icons/beer-jar.png")
+      store: require("../assets/icons/shop.png"),
+      stadium: require("../assets/icons/stadium.png"),
+      park: require("../assets/icons/soccerfieldhorifilled.png")
     };
-
-    if (this.props.mapMarkers.locations){
-      console.log('wooooooo')
-  
-
-    }
-
-
 
     return (
       <View>
@@ -97,9 +81,7 @@ class MapScreen extends Component {
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
               }}
-          >
-
-          
+          > 
           {this.props.mapMarkers.locations.map(MapMarker => 
           <Marker 
           key={MapMarker.id}
@@ -113,6 +95,8 @@ class MapScreen extends Component {
                 <Text>{MapMarker.name}</Text>
                 <Text>SG's</Text>
                 <Text>{MapMarker.id}</Text>
+                {this.addSupporters({MapMarker})}
+
                 {this.addDailyEvents({MapMarker})}
 
               </View>
@@ -149,16 +133,6 @@ const styles = {
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center'
-  },
-  dividerStyle: {
-    width: SCREEN_WIDTH * 0.9,
-    backgroundColor: '#2196F3'
-  },
-  buttonContainerStyle: {
-    width: SCREEN_WIDTH,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingBottom: 10
   }
 };
 
