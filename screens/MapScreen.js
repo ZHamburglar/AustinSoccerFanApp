@@ -14,32 +14,34 @@ const window = Dimensions.get('window');
 class MapScreen extends Component {
   addSupporters(markerLocation, teamImages){
     // console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
+
     var teamLogos = []
-    // this.props.supportersGroups.MLS.filter((mls)=>mls.homebar == markerLocation.MapMarker.id)
-    //   }     
-    // }
-    // return teamLogos;
-
-
-
 
     for (i = 0; i < this.props.supportersGroups.MLS.length; i++) { 
+
       // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
       if (this.props.supportersGroups.MLS[i].homebar == markerLocation.MapMarker.id){
         teamLogos.push(this.props.supportersGroups.MLS[i])
-
-        // return(
-        //   <View>
-        //     <Text>{this.props.supportersGroups.MLS[i].name}</Text>
-        //     <Image
-        //       style={{width: 25, height: 25}}
-        //       source={teamImages[this.props.supportersGroups.MLS[i].id]}
-        //     />
-        //   </View>
-        // )
       }    
     }
-    console.log("team logos",teamLogos)
+
+    console.log("team logos",teamLogos, typeof teamLogos)
+    if (teamLogos.length > 0){
+      console.log("this has teams", teamLogos[0].name)
+      for (var name in teamLogos){
+        return <Text>hmmmmm</Text>
+      }
+      
+
+
+
+    } else (
+      console.log("this doesn't have teams")
+    )
+    
+     
+    
+    
 
   }
 
@@ -92,7 +94,28 @@ class MapScreen extends Component {
       6: require("../assets/logos/MLS/AUFC_logo.png"),
       7: require("../assets/logos/MLS/AUFC_logo.png"),
       8: require("../assets/logos/MLS/AUFC_logo.png"),
-      9: require("../assets/logos/MLS/AUFC_logo.png")
+      9: require("../assets/logos/MLS/AUFC_logo.png"),
+      10: require("../assets/logos/MLS/AUFC_logo.png"),
+      11: require("../assets/logos/MLS/AUFC_logo.png"),
+      12: require("../assets/logos/MLS/AUFC_logo.png"),
+      13: require("../assets/logos/MLS/AUFC_logo.png"),
+      14: require("../assets/logos/MLS/AUFC_logo.png"),
+      15: require("../assets/logos/MLS/AUFC_logo.png"),
+      16: require("../assets/logos/MLS/AUFC_logo.png"),
+      17: require("../assets/logos/MLS/AUFC_logo.png"),
+      18: require("../assets/logos/MLS/AUFC_logo.png"),
+      19: require("../assets/logos/MLS/AUFC_logo.png"),
+      20: require("../assets/logos/MLS/AUFC_logo.png"),
+      21: require("../assets/logos/MLS/AUFC_logo.png"),
+      22: require("../assets/logos/MLS/AUFC_logo.png"),
+      23: require("../assets/logos/MLS/AUFC_logo.png"),
+      24: require("../assets/logos/MLS/AUFC_logo.png"),
+      25: require("../assets/logos/MLS/AUFC_logo.png"),
+      26: require("../assets/logos/MLS/AUFC_logo.png"),
+      27: require("../assets/logos/MLS/AUFC_logo.png"),
+      28: require("../assets/logos/MLS/AUFC_logo.png"),
+      29: require("../assets/logos/MLS/AUFC_logo.png")
+
     }
 
     return (
