@@ -12,23 +12,21 @@ const window = Dimensions.get('window');
 
 
 class MapScreen extends Component {
-
-  
-
   addSupporters(markerLocation, teamImages){
     // console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
     var teamLogos = []
+    // this.props.supportersGroups.MLS.filter((mls)=>mls.homebar == markerLocation.MapMarker.id)
+    //   }     
+    // }
+    // return teamLogos;
+
+
+
+
     for (i = 0; i < this.props.supportersGroups.MLS.length; i++) { 
       // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
-
       if (this.props.supportersGroups.MLS[i].homebar == markerLocation.MapMarker.id){
-        
-
         teamLogos.push(this.props.supportersGroups.MLS[i])
-
-        // console.log("team logos",teamLogos)
-
-        
 
         // return(
         //   <View>
@@ -39,18 +37,9 @@ class MapScreen extends Component {
         //     />
         //   </View>
         // )
-
-
-
-      } 
-      
+      }    
     }
     console.log("team logos",teamLogos)
-    return (
-      <View>
-        <Text>Hello</Text>
-      </View>
-    )
 
   }
 
