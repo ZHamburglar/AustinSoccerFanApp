@@ -14,7 +14,7 @@ const window = Dimensions.get('window');
 class MapScreen extends Component {
   addSupporters(markerLocation, teamImages){
     // console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
-
+    // Creates an array for teams to be put into when the conditions are met.
     var teamLogos = []
 
     for (i = 0; i < this.props.supportersGroups.MLS.length; i++) { 
@@ -29,6 +29,7 @@ class MapScreen extends Component {
     if (teamLogos.length > 0){
       console.log("this has teams", teamLogos[0].name)
       for (var name in teamLogos){
+        // This is where the logos will be generated when the conditions are met
         return <Text>hmmmmm</Text>
       }
       
