@@ -12,7 +12,18 @@ const window = Dimensions.get('window');
 
 
 class MapScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 1,
+      teamNames:""
+    };
+  }
+
   addSupporters(markerLocation, teamImages){
+   
+      
+    
     // console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
     // Creates an array for teams to be put into when the conditions are met.
     var teamLogos = []
@@ -27,23 +38,19 @@ class MapScreen extends Component {
 
     console.log("team logos",teamLogos, typeof teamLogos)
     if (teamLogos.length > 0){
-      console.log("this has teams", teamLogos[0].name)
-      for (var name in teamLogos){
-        // This is where the logos will be generated when the conditions are met
-        return <Text>hmmmmm</Text>
-      }
       
-
-
+      // console.log("this has teams", teamLogos[0].name)
+      // for (i = 0; i < teamLogos.length; i++) { 
+      //   console.log(teamLogos.length)
+      //   // teamnames.append(teamLogos[i].name)
+        
+      // }
+      // // This is where the logos will be generated when the conditions are met
+      // return <Text>Hello</Text>
 
     } else (
       console.log("this doesn't have teams")
     )
-    
-     
-    
-    
-
   }
 
   addDailyEvents(markerLocation){
