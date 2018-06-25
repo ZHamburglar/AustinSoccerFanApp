@@ -12,13 +12,6 @@ const window = Dimensions.get('window');
 
 
 class MapScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      index: 1,
-      teamNames:""
-    };
-  }
 
   addSupporters(markerLocation, teamImages){
     // console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
@@ -36,7 +29,7 @@ class MapScreen extends Component {
     console.log("team logos",teamLogos, typeof teamLogos)
     if (teamLogos.length > 0){
       
-      // console.log("this has teams", teamLogos[0].name)
+      console.log("this has teams", teamLogos[0].name)
       // for (i = 0; i < teamLogos.length; i++) { 
       //   console.log(teamLogos.length)
       //   // teamnames.append(teamLogos[i].name)
