@@ -21,9 +21,6 @@ class MapScreen extends Component {
   }
 
   addSupporters(markerLocation, teamImages){
-   
-      
-    
     // console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
     // Creates an array for teams to be put into when the conditions are met.
     var teamLogos = []
