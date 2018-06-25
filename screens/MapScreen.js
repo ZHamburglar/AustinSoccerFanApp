@@ -13,14 +13,15 @@ const window = Dimensions.get('window');
 
 class MapScreen extends Component {
 
+  
+
+
   addSupporters(markerLocation, teamImages){
     // console.log("Supporter's groups", this.props.supportersGroups.MLS, this.props.supportersGroups.MLS[3])
     // Creates an array for teams to be put into when the conditions are met.
     var teamLogos = []
 
     for (i = 0; i < this.props.supportersGroups.MLS.length; i++) { 
-
-      // console.log('events location', this.props.events[i].location, "marker location", markerLocation.MapMarker.id)
       if (this.props.supportersGroups.MLS[i].homebar == markerLocation.MapMarker.id){
         teamLogos.push(this.props.supportersGroups.MLS[i])
       }    
@@ -30,13 +31,10 @@ class MapScreen extends Component {
     if (teamLogos.length > 0){
       
       console.log("this has teams", teamLogos[0].name)
-      // for (i = 0; i < teamLogos.length; i++) { 
-      //   console.log(teamLogos.length)
-      //   // teamnames.append(teamLogos[i].name)
-        
-      // }
-      // // This is where the logos will be generated when the conditions are met
-      // return <Text>Hello</Text>
+      return(
+        <Text>List of Team Logos Goes Here</Text>
+      )
+     
 
     } else (
       console.log("this doesn't have teams")
@@ -75,6 +73,7 @@ class MapScreen extends Component {
     const { container, mapView } = styles;
     const { MapMarkers } = this.props.mapMarkers.locations
     // console.log("props for markers", this.props.mapMarkers.locations)
+
     const markerImages = {
       pubmain: require("../assets/icons/beer-jar.png"),
       store: require("../assets/icons/shop.png"),
