@@ -30,7 +30,7 @@ class SettingsTeams extends Component {
 
 
   render() {
-    const { logoSize, lineStyle, itemStyle, teamName } = styles;
+    const { logoSize, lineStyle, logoStyle, itemStyle, teamName } = styles;
     const { id, name, logo } = this.props.leagueteams;
     console.log('boohoo', {logo})
 
@@ -82,7 +82,7 @@ class SettingsTeams extends Component {
               onPress={this.switchState} />
           <Image 
           source={teamImages[id]}
-          style={logoSize}
+          style={logoStyle}
           />
           <View style={teamName}>
             <Text >
@@ -105,9 +105,10 @@ const styles = {
     paddingLeft: 10,
     paddingRight: 10
   },
-  logoSize: {
+  logoStyle: {
     width: 50,
-    height: 50
+    height: 50,
+    marginLeft: 20
   },
   lineStyle: {
     height: 100,   
@@ -118,12 +119,14 @@ const styles = {
   },
   itemStyle: {
     flexDirection: 'row',
-    flex: 1
+    flex: 1,
+    marginBottom: 5
   },
   teamName: {
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    marginLeft: 20
   }
 };
 

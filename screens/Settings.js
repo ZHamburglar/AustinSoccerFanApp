@@ -54,14 +54,16 @@ class Settings extends Component {
     console.log("props", this.props.leagueteams.MLS, "EPL", this.props.leagueteams.EPL)
     const { leagueteams } = this.props.leagueteams
 
-    const { containerStyle, dividerStyle, buttonContainerStyle, listStyle } = styles;
+    const { containerStyle, dividerStyle, buttonContainerStyle, listStyle, listBuffer } = styles;
 
     return (
       <View style={listStyle}>
-        <ListView
-        dataSource={this.dataSource}
-        renderRow={this.renderRow}
-        />
+        <View style={listBuffer}>
+          <ListView
+          dataSource={this.dataSource}
+          renderRow={this.renderRow}
+          />
+        </View>
       </View>
       
     );
@@ -91,7 +93,12 @@ const styles = {
     paddingBottom: 10
   },
   listStyle: {
-    backgroundColor: '#2196F3'
+    backgroundColor: '#2196F3',
+  },
+  listBuffer: {
+    marginTop: 25,
+    marginLeft: 20
+
   }
 };
 
