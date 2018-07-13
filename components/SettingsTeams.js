@@ -30,37 +30,31 @@ class SettingsTeams extends Component {
 
 
   render() {
-    const { logoSize } = styles;
+    const { logoSize, lineStyle, itemStyle, teamName } = styles;
     const { id, name, logo } = this.props.leagueteams;
     console.log('boohoo', {logo})
     return (
-    <TouchableWithoutFeedback onPress={this.switchState} 
-        style={{
-            height: 100,   
-            width: 100,   
-            backgroundColor: this.state.checked ? 'red' : 'green',   
-            borderRadius: 10,
-            borderWidth: 0.2,
-            borderColor: this.state.checked ? 'red' : 'green'           
-    }}
-    key={id}
-    >
-    <View>
-    <Image 
-    source={require("../assets/logos/MLS/AUFC_logo.png")}
-    style={logoSize}
-    />
-    
-    <Icon
-        name={this.state.checked ? 'checkbox-marked' : 'checkbox-blank-outline'}
-        color='#f50'
-        type='material-community'
-        onPress={this.switchState} />
-    <Text>
-    {name}
-    </Text>
-    </View>
-    </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={this.switchState} 
+        style={lineStyle}
+        key={id}
+      >
+        <View style={itemStyle}>
+          
+          <Icon
+              name={this.state.checked ? 'checkbox-marked' : 'checkbox-blank-outline'}
+              color='#f50'
+              type='material-community'
+              onPress={this.switchState} />
+          <Image 
+          source={require("../assets/logos/MLS/AUFC_logo.png")}
+          style={logoSize}
+          />
+
+          <Text style={teamName}>
+            {name}
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
@@ -77,6 +71,19 @@ const styles = {
   logoSize: {
     width: 50,
     height: 50
+  },
+  lineStyle: {
+    height: 100,   
+    width: 100,   
+    borderRadius: 10,
+    borderWidth: 0.2,
+  },
+  itemStyle: {
+    flexDirection: 'row',
+    flex: 1
+  },
+  teamName: {
+    justifyContent: 'center'
   }
 };
 
