@@ -9,7 +9,7 @@
            {
               "id": 1,
               "name": "Chicago Fire",
-              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "logo": "../assets/logos/MLS/CHI15_Primary.png",
               "homebar": 101
            },
            {
@@ -21,25 +21,25 @@
            {
               "id": 3,
               "name": "Colorado Rapids",
-              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "logo": "../assets/logos/MLS/COL15_Primary.png",
               "homebar": 101
            },
            {
               "id": 4,
               "name": "D.C. United",
-              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "logo": "../assets/logos/MLS/DCUnited.jpg",
               "homebar": 107
            },
            {
               "id": 5,
               "name": "FC Dallas",            
-              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "logo": "../assets/logos/MLS/FCD15_Primary.png",
               "homebar": 101
            },
            {
               "id": 6,
               "name": "Houston Dynamo",
-              "logo": "../assets/logos/MLS/AUFC_logo.png",
+              "logo": "../assets/logos/MLS/HOU15_Primary.png",
               "homebar": 101
            },
            {

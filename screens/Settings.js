@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { View, Platform, Image, Text, Button, ScrollView, ListView } from 'react-native';
+import { View, 
+  Platform, 
+  Image, 
+  Text, 
+  Button, 
+  ScrollView, 
+  ListView,
+  AsyncStorage 
+} from 'react-native';
 import { Divider, CheckBox } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -17,7 +25,7 @@ const cacheImages = images => images.map(image => {
 });
 
 class Settings extends Component {
-  
+
   componentWillMount() {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
@@ -46,13 +54,16 @@ class Settings extends Component {
     console.log("props", this.props.leagueteams.MLS, "EPL", this.props.leagueteams.EPL)
     const { leagueteams } = this.props.leagueteams
 
-    const { containerStyle, dividerStyle, buttonContainerStyle } = styles;
+    const { containerStyle, dividerStyle, buttonContainerStyle, listStyle } = styles;
 
     return (
-      <ListView
-      dataSource={this.dataSource}
-      renderRow={this.renderRow}
-    />
+      <View style={listStyle}>
+        <ListView
+        dataSource={this.dataSource}
+        renderRow={this.renderRow}
+        />
+      </View>
+      
     );
   }
 }
@@ -78,6 +89,9 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 10
+  },
+  listStyle: {
+    backgroundColor: '#2196F3'
   }
 };
 

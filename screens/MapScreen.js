@@ -112,7 +112,6 @@ class MapScreen extends Component {
       27: require("../assets/logos/MLS/AUFC_logo.png"),
       28: require("../assets/logos/MLS/AUFC_logo.png"),
       29: require("../assets/logos/MLS/AUFC_logo.png")
-
     }
 
     return (
