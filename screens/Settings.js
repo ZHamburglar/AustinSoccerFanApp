@@ -11,6 +11,8 @@ import { View,
 import { Divider, CheckBox } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
+import Config from 'react-native-config';
+
 
 import Expo from 'expo';
 import CapoKey from '../components/CapoKey';
@@ -23,6 +25,9 @@ const cacheImages = images => images.map(image => {
   if (typeof image === 'string') return Image.prefetch(image);
   return Expo.Asset.fromModule(image).downloadAsync();
 });
+
+Config.SOCCERTEAM_JSON_URL
+
 
 class Settings extends Component {
 
