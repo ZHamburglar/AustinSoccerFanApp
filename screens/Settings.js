@@ -6,7 +6,7 @@ import { View,
   Button, 
   ScrollView, 
   ListView,
-  AsyncStorage 
+  AsyncStorage
 } from 'react-native';
 import { Divider, CheckBox } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
@@ -59,10 +59,18 @@ class Settings extends Component {
     console.log("props", this.props.leagueteams.MLS, "EPL", this.props.leagueteams.EPL)
     const { leagueteams } = this.props.leagueteams
 
-    const { containerStyle, dividerStyle, buttonContainerStyle, listStyle, listBuffer } = styles;
+    const { containerStyle, dividerStyle, buttonContainerStyle, listStyle, listBuffer,saveButton, buttonContainer } = styles;
 
     return (
       <View style={listStyle}>
+        <View style={buttonContainer}>
+          <Button 
+            title="Save Selection"
+            color="#FFFFFF"
+            onPress= {() => console.log("button pressed")}
+            style= {saveButton} />
+        </View>
+        
         <View style={listBuffer}>
           <ListView
           dataSource={this.dataSource}
@@ -103,7 +111,17 @@ const styles = {
   listBuffer: {
     marginTop: 25,
     marginLeft: 20
-
+  },
+  saveButton:{
+    height: 50,
+    width: 50
+  },
+  buttonContainer:{
+    
+    alignSelf: 'flex-end',
+    position: 'absolute',
+    top: 50,
+    zIndex: 3
   }
 };
 
