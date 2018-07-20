@@ -8,15 +8,11 @@ import { View,
   ListView,
   AsyncStorage
 } from 'react-native';
-import { Divider, CheckBox } from 'react-native-elements';
-import { createStackNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
 import Config from 'react-native-config';
 
 
 import Expo from 'expo';
-import CapoKey from '../components/CapoKey';
-import BottomNavBar from '../components/BottomNavBar';
 import SettingsTeams from '../components/SettingsTeams';
 
 import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from '../constants';
@@ -44,9 +40,7 @@ class Settings extends Component {
   }
 
   state = {
-    appIsReady: false,
-    checked: false
-
+    appIsReady: false
   }
 
   logtheprops(){
@@ -59,7 +53,7 @@ class Settings extends Component {
     console.log("props", this.props.leagueteams.MLS, "EPL", this.props.leagueteams.EPL)
     const { leagueteams } = this.props.leagueteams
 
-    const { containerStyle, dividerStyle, buttonContainerStyle, listStyle, listBuffer,saveButton, buttonContainer } = styles;
+    const { listStyle, listBuffer,saveButton, buttonContainer } = styles;
 
     return (
       <View style={listStyle}>
