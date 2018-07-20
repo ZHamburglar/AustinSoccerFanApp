@@ -10,6 +10,7 @@ import { View,
 } from 'react-native';
 import { connect } from 'react-redux';
 import Config from 'react-native-config';
+import * as actions from '../actions';
 
 
 import Expo from 'expo';
@@ -69,6 +70,7 @@ class Settings extends Component {
           <ListView
           dataSource={this.dataSource}
           renderRow={this.renderRow}
+          checkItem={checked => this.props.teamChecked(checked)}
           />
         </View>
       </View>
@@ -124,4 +126,4 @@ const mapStateToProps = state => {
   return { leagueteams: state.leagueteams };
 };
 
-export default connect(mapStateToProps) (Settings);
+export default connect(mapStateToProps, actions) (Settings);

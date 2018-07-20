@@ -7,3 +7,12 @@ export const CLOSE_CHORDS_MODAL = 'close_chords_modal';
 
 export const SETTINGS_SELECT_TEAM = 'settings_select_team';
 export const SETTINGS_UNSELECT_TEAM = 'settings_unselect_team';
+
+
+export const UNSELECT_TEAM = 'unselect_team';
+export const SELECT_TEAM = 'select_team';
+export const UNSELECT_ALL_TEAMS = 'unselect_all_teams';
+
+
+
+
