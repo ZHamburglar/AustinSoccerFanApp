@@ -14,6 +14,11 @@ import { connect } from 'react-redux';
 
 
 class SettingsTeams extends Component {
+  static defaultProps = {
+    checkItem: () => {},
+    keyProp: 'id'
+  }
+
   componentWillUpdate() {
     LayoutAnimation.easeInEaseOut()
   }
@@ -23,9 +28,12 @@ class SettingsTeams extends Component {
   }
 
   switchState = () => {
-    this.setState({checked: !this.state.checked})
+    const { checkItem } = this.props;
 
+
+    this.setState({checked: !this.state.checked})
     console.log("switching the state")
+    checkItem(this.state.checked)
  }
 
 
@@ -130,9 +138,5 @@ const styles = {
   }
 };
 
-// const mapStateToProps = (state, ownProps) => {
-//   const expanded = state.selectedServerId === ownProps.server.id
-//   return { expanded };
-// };
 
 export default connect(null, null)(SettingsTeams);

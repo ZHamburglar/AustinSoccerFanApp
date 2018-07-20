@@ -32,12 +32,17 @@ class Settings extends Component {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
-
     this.dataSource = ds.cloneWithRows(this.props.leagueteams.MLS);
   }
 
+
+  // This is each item that is rendered.
   renderRow(leagueteams) {
-    return <SettingsTeams leagueteams={leagueteams} />;
+    return <SettingsTeams 
+      leagueteams={leagueteams}      
+      // checkItem={checked => this.props.teamChecked(checked)}
+      keyProp="jobkey"
+    />;
   }
 
   state = {
@@ -64,13 +69,17 @@ class Settings extends Component {
             color="#FFFFFF"
             onPress= {() => console.log("button pressed")}
             style= {saveButton} />
+            <Button 
+            title="Clear Selection"
+            color="#FFFFFF"
+            onPress= {this.props.unselectAllTeams}
+            style= {saveButton} />
         </View>
         
         <View style={listBuffer}>
           <ListView
           dataSource={this.dataSource}
           renderRow={this.renderRow}
-          checkItem={checked => this.props.teamChecked(checked)}
           />
         </View>
       </View>
