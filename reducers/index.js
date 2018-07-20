@@ -6,7 +6,9 @@ import LeagueTeamsReducer from './LeagueTeams_reducer';
 import CalendarDatesReducer from './CalendarDates_reducer';
 import AustinMapMarkers from './AustinMapMarkers_reducer';
 
-export default combineReducers({
+
+// with redux persist you no longer need the export default combineReducers({ keys, selectedValues blah})
+export default ({
   keys: keysReducer, 
   selectedValues: selectedValuesReducer, 
   modal: modalReducer,

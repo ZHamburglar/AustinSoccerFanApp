@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+
 // import { createStackNavigator, createBottomTabNavigator,createMaterialBottomTabNavigator } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
-
 import { View, Platform, Image, Text } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
@@ -10,7 +11,8 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
 
-import store from './store';
+import configureStore from './store';
+
 import MainScreen from './screens/MainScreen';
 import SupportersGroups from './screens/SupportersGroups'
 import MapScreen from './screens/MapScreen';
@@ -114,12 +116,13 @@ export default class App extends Component {
       }
     });
 
+    const { persistor, store } = configureStore();
 
     return (
       <Provider store={store}>
-
-        <IndexPage />
-
+        <PersistGate persistor={persistor}>
+          <IndexPage />
+        </PersistGate>
       </Provider>
     );
   }
