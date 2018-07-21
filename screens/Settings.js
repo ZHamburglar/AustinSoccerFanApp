@@ -40,8 +40,9 @@ class Settings extends Component {
   renderRow(leagueteams) {
     return <SettingsTeams 
       leagueteams={leagueteams}      
-      // checkItem={checked => this.props.teamChecked(checked)}
-      keyProp="jobkey"
+      checkItem={team => this.props.settingsSelectTeam(team)}
+      keyProp="id"
+      isChecked
     />;
   }
 

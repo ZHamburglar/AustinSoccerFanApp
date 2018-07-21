@@ -9,7 +9,7 @@ import reducers from '../reducers';
 const config = {
  key: 'root',
  storage: AsyncStorage,
- whitelist: ['checkedTeams']
+ whitelist: ['teamSelected']
 };
  
 const reducer = persistCombineReducers(config, reducers);

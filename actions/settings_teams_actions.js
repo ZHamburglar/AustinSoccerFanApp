@@ -4,10 +4,12 @@ import {
     UNSELECT_ALL_TEAMS
   } from './types';
   
-  export const settingsSelectTeam = payload => ({ 
-    type: SETTINGS_SELECT_TEAM, 
-    payload: true
-  });
+  export const settingsSelectTeam = (team) => {
+    return {
+      payload: team,
+      type: SETTINGS_SELECT_TEAM
+    }
+  }
 
   export const settingsUnselectTeam = (team) => {
     console.log("team is being selected in redux")

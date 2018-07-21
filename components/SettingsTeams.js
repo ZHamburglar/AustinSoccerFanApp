@@ -16,7 +16,8 @@ import { connect } from 'react-redux';
 class SettingsTeams extends Component {
   static defaultProps = {
     checkItem: () => {},
-    keyProp: 'id'
+    keyProp: 'id',
+    // checked: false
   }
 
   componentWillUpdate() {
@@ -32,15 +33,15 @@ class SettingsTeams extends Component {
 
 
     this.setState({checked: !this.state.checked})
-    console.log("switching the state")
-    checkItem(this.state.checked)
+    console.log("switching the state", this.props, this.state)
+    // checkItem(this.state.checked)
  }
 
 
   render() {
     const { logoSize, lineStyle, logoStyle, itemStyle, teamName } = styles;
     const { id, name, logo } = this.props.leagueteams;
-    console.log('boohoo', {logo})
+    // console.log('boohoo', {logo})
 
     const teamImages = {
       0: require("../assets/logos/MLS/AUFC_logo.png"),
