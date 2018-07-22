@@ -40,9 +40,7 @@ class Settings extends Component {
   renderRow(leagueteams) {
     return <SettingsTeams 
       leagueteams={leagueteams}      
-      checkItem={team => this.props.settingsSelectTeam(team)}
       keyProp="id"
-      isChecked
     />;
   }
 
@@ -50,15 +48,9 @@ class Settings extends Component {
     appIsReady: false
   }
 
-  logtheprops(){
-    console.log("hello")
-  }
-  
-
-
   render() {
-    console.log("props", this.props.leagueteams.MLS, "EPL", this.props.leagueteams.EPL)
-    const { leagueteams } = this.props.leagueteams
+    console.log("props", this.props.leagueteams.MLS, "EPL", this.props.leagueteams.EPL, this.props.teamSelect)
+    const { leagueteams, teamSelect } = this.props
 
     const { listStyle, listBuffer,saveButton, buttonContainer } = styles;
 
@@ -81,6 +73,8 @@ class Settings extends Component {
           <ListView
           dataSource={this.dataSource}
           renderRow={this.renderRow}
+          isChecked={teamSelect}
+
           />
         </View>
       </View>
@@ -133,7 +127,10 @@ const styles = {
 
 
 const mapStateToProps = state => {
-  return { leagueteams: state.leagueteams };
+  return { 
+    leagueteams: state.leagueteams,
+    teamSelect: state.teamSelected
+   };
 };
 
 export default connect(mapStateToProps, actions) (Settings);

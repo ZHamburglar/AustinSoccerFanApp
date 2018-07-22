@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+//import { combineReducers } from 'redux';
 import keysReducer from './keys_reducer';
 import selectedTeamsReducer from './selections_reducer';
 import modalReducer from './modal_reducer';

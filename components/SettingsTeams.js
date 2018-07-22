@@ -17,8 +17,8 @@ class SettingsTeams extends Component {
   static defaultProps = {
     checkItem: () => {},
     keyProp: 'id',
-    // checked: false
-  }
+    checked: false
+    }
 
   componentWillUpdate() {
     LayoutAnimation.easeInEaseOut()
@@ -33,8 +33,8 @@ class SettingsTeams extends Component {
 
 
     this.setState({checked: !this.state.checked})
-    console.log("switching the state", this.props, this.state)
-    // checkItem(this.state.checked)
+    console.log("switching the state", this.props.leagueteams.id, this.props, this.state.checked, this.props.checkItem)
+    checkItem()
  }
 
 

@@ -5,6 +5,7 @@ import {
   } from './types';
   
   export const settingsSelectTeam = (team) => {
+    console.log("team", team)
     return {
       payload: team,
       type: SETTINGS_SELECT_TEAM
@@ -15,7 +16,7 @@ import {
     console.log("team is being selected in redux")
     return {
       payload: team,
-      type: SETTINGS_SELECT_TEAM
+      type: SETTINGS_UNSELECT_TEAM
     }
   }
 

@@ -4,79 +4,92 @@
               "id": 0,
               "name": "Atlanta United",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 103
+              "homebar": 103,
+              "checked": false
            },
            {
               "id": 1,
               "name": "Chicago Fire",
               "logo": "../assets/logos/MLS/CHI15_Primary.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 2,
               "name": "FC Cincinatti",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 3,
               "name": "Colorado Rapids",
               "logo": "../assets/logos/MLS/COL15_Primary.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 4,
               "name": "D.C. United",
               "logo": "../assets/logos/MLS/DCUnited.jpg",
-              "homebar": 107
+              "homebar": 107,
+              "checked": false
            },
            {
               "id": 5,
               "name": "FC Dallas",            
               "logo": "../assets/logos/MLS/FCD15_Primary.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 6,
               "name": "Houston Dynamo",
               "logo": "../assets/logos/MLS/HOU15_Primary.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 7,
               "name": "LA Galaxy",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 8,
               "name": "LAFC",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 9,
               "name": "Minnesota United",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 10,
               "name": "Montreal Impact",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 11,
               "name": "New England Revolution",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 101
+              "homebar": 101,
+              "checked": false
            },
            {
               "id": 12,
               "name": "NYCFC",
               "logo": "../assets/logos/MLS/AUFC_logo.png",
-              "homebar": 104
+              "homebar": 104,
+              "checked": false
            },
            {
               "id": 13,
